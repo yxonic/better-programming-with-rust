@@ -1,0 +1,6 @@
+[book]
+authors = ["Yu Yin"]
+language = "zh-cn"
+multilingual = false
+src = "src"
+title = "Rust编程思想"
