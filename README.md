@@ -1,5 +1,5 @@
 # Rust 编程思想
-!(https://github.com/yxonic/rust-zen/workflows/Github%20Pages/badge.svg)(https://yxonic.github.io/rust-zen/)
+[![Github Pages](https://github.com/yxonic/rust-zen/workflows/Github%20Pages/badge.svg)](https://yxonic.github.io/rust-zen/)
 
 当你理解一门语言的思维方式，它的语法往往是自然而然的。
 
@@ -12,6 +12,7 @@
 2. 编码范式
    - 函数式编程
    - 枚举和模式匹配
+   - 零代价抽象
 3. 设计抽象
    - 数据抽象和操作抽象：`struct` 和 `trait`
    - 动态性：泛型和多态

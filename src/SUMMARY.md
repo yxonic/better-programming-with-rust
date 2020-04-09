@@ -9,6 +9,7 @@
 - [编码范式](2-0-coding-paradigm.md)
   - [函数式编程](2-1-functional.md)
   - [枚举和模式匹配](2-2-enum.md)
+  - [零代价抽象](2-3-zero-cost.md)
 
 - [设计抽象](3-0-design.md)
   - [数据抽象和操作抽象：`struct` 和 `trait`](3-1-abstraction.md)
