@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Dependency
-      run: cargo install mdbook
+      run: wget https://github.com/rust-lang/mdBook/releases/download/v0.3.7/mdbook-v0.3.7-x86_64-unknown-linux-gnu.tar.gz && tar xvf mdbook-v0.3.7-x86_64-unknown-linux-gnu.tar.gz
     - name: Build Book
-      run: mdbook build
+      run: ./mdbook build
