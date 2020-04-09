@@ -3,6 +3,4 @@ authors = ["Yu Yin"]
 language = "zh-cn"
 multilingual = false
 src = "src"
-title = "Rust编程思想"
-[build]
-create-missing = true
+title = "Rust 编程思想"
