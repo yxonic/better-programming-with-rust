@@ -3,9 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Rust编程思想</title>
-        
-        <meta name="robots" content="noindex" />
+        <title>所有权控制 - Rust编程思想</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html"><strong aria-hidden="true">1.</strong> 内存控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-layout.html"><strong aria-hidden="true">1.1.</strong> 数据排布</a></li><li class="chapter-item expanded "><a href="1-2-ownership.html"><strong aria-hidden="true">1.2.</strong> 所有权控制</a></li><li class="chapter-item expanded "><a href="1-3-borrowing.html"><strong aria-hidden="true">1.3.</strong> 借用：规则与打破规则</a></li><li class="chapter-item expanded "><a href="1-4-concurrency.html"><strong aria-hidden="true">1.4.</strong> 并发中的内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-coding-paradigm.html"><strong aria-hidden="true">2.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-functional.html"><strong aria-hidden="true">2.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="2-2-enum.html"><strong aria-hidden="true">2.2.</strong> 枚举和模式匹配</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-design.html"><strong aria-hidden="true">3.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-abstraction.html"><strong aria-hidden="true">3.1.</strong> 数据抽象和操作抽象：struct 和 trait</a></li><li class="chapter-item expanded "><a href="3-2-dynamic.html"><strong aria-hidden="true">3.2.</strong> 动态性：泛型和多态</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程组织</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-mods.html"><strong aria-hidden="true">4.1.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-2-crates.html"><strong aria-hidden="true">4.2.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-3-tests.html"><strong aria-hidden="true">4.3.</strong> 测试</a></li></ol></li><li class="chapter-item expanded "><a href="5-0-metaprogramming.html"><strong aria-hidden="true">5.</strong> 元编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5-1-simplify.html"><strong aria-hidden="true">5.1.</strong> 利用元编程简化编码</a></li><li class="chapter-item expanded "><a href="5-2-macro.html"><strong aria-hidden="true">5.2.</strong> 宏：理解和控制编译行为</a></li><li class="chapter-item expanded "><a href="5-3-cans-and-cannots.html"><strong aria-hidden="true">5.3.</strong> 元编程的能力与极限</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html"><strong aria-hidden="true">1.</strong> 内存控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-layout.html"><strong aria-hidden="true">1.1.</strong> 数据排布</a></li><li class="chapter-item expanded "><a href="1-2-ownership.html" class="active"><strong aria-hidden="true">1.2.</strong> 所有权控制</a></li><li class="chapter-item expanded "><a href="1-3-borrowing.html"><strong aria-hidden="true">1.3.</strong> 借用：规则与打破规则</a></li><li class="chapter-item expanded "><a href="1-4-concurrency.html"><strong aria-hidden="true">1.4.</strong> 并发中的内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-coding-paradigm.html"><strong aria-hidden="true">2.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-functional.html"><strong aria-hidden="true">2.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="2-2-enum.html"><strong aria-hidden="true">2.2.</strong> 枚举和模式匹配</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-design.html"><strong aria-hidden="true">3.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-abstraction.html"><strong aria-hidden="true">3.1.</strong> 数据抽象和操作抽象：struct 和 trait</a></li><li class="chapter-item expanded "><a href="3-2-dynamic.html"><strong aria-hidden="true">3.2.</strong> 动态性：泛型和多态</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程组织</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-mods.html"><strong aria-hidden="true">4.1.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-2-crates.html"><strong aria-hidden="true">4.2.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-3-tests.html"><strong aria-hidden="true">4.3.</strong> 测试</a></li></ol></li><li class="chapter-item expanded "><a href="5-0-metaprogramming.html"><strong aria-hidden="true">5.</strong> 元编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5-1-simplify.html"><strong aria-hidden="true">5.1.</strong> 利用元编程简化编码</a></li><li class="chapter-item expanded "><a href="5-2-macro.html"><strong aria-hidden="true">5.2.</strong> 宏：理解和控制编译行为</a></li><li class="chapter-item expanded "><a href="5-3-cans-and-cannots.html"><strong aria-hidden="true">5.3.</strong> 元编程的能力与极限</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,34 +147,22 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#rust-编程思想" id="rust-编程思想">Rust 编程思想</a></h1>
-<p>当你理解一门语言的思维方式，它的语法往往是自然而然的。</p>
-<h1><a class="header" href="#内存控制" id="内存控制">内存控制</a></h1>
-<h2><a class="header" href="#数据排布" id="数据排布">数据排布</a></h2>
-<h2><a class="header" href="#所有权控制" id="所有权控制">所有权控制</a></h2>
-<h2><a class="header" href="#借用规则与打破规则" id="借用规则与打破规则">借用：规则与打破规则</a></h2>
-<h2><a class="header" href="#并发中的内存模型" id="并发中的内存模型">并发中的内存模型</a></h2>
-<h1><a class="header" href="#编码范式" id="编码范式">编码范式</a></h1>
-<h2><a class="header" href="#函数式编程" id="函数式编程">函数式编程</a></h2>
-<h2><a class="header" href="#枚举和模式匹配" id="枚举和模式匹配">枚举和模式匹配</a></h2>
-<h1><a class="header" href="#设计抽象" id="设计抽象">设计抽象</a></h1>
-<h2><a class="header" href="#数据抽象和操作抽象struct-和-trait" id="数据抽象和操作抽象struct-和-trait">数据抽象和操作抽象：struct 和 trait</a></h2>
-<h2><a class="header" href="#动态性泛型和多态" id="动态性泛型和多态">动态性：泛型和多态</a></h2>
-<h1><a class="header" href="#工程组织" id="工程组织">工程组织</a></h1>
-<h2><a class="header" href="#模块组织" id="模块组织">模块组织</a></h2>
-<h2><a class="header" href="#包和包管理" id="包和包管理">包和包管理</a></h2>
-<h2><a class="header" href="#测试" id="测试">测试</a></h2>
-<h1><a class="header" href="#元编程" id="元编程">元编程</a></h1>
-<h2><a class="header" href="#利用元编程简化编码" id="利用元编程简化编码">利用元编程简化编码</a></h2>
-<h2><a class="header" href="#宏理解和控制编译行为" id="宏理解和控制编译行为">宏：理解和控制编译行为</a></h2>
-<h2><a class="header" href="#元编程的能力与极限" id="元编程的能力与极限">元编程的能力与极限</a></h2>
+                        <h2><a class="header" href="#所有权控制" id="所有权控制">所有权控制</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="1-1-layout.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="1-3-borrowing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -186,7 +172,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="1-1-layout.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a rel="next" href="1-3-borrowing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
@@ -219,14 +213,6 @@
         <!-- Custom JS scripts -->
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
         
 
     </body>
