@@ -1,0 +1,19 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Dependency
+      run: cargo install mdbook
+    - name: Build Book
+      run: mdbook build
