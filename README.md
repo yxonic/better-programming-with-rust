@@ -1,7 +1,7 @@
 # Rust 编程思想
 [![Github Pages](https://github.com/yxonic/rust-zen/workflows/Github%20Pages/badge.svg)](https://yxonic.github.io/rust-zen/)
 
-当你理解一门语言的思维方式，它的语法往往是自然而然的。
+当你理解了一门语言的思想，其语法往往是自然而然的。
 
 # 目录
 1. 内存控制
