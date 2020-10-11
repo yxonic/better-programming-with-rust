@@ -5,13 +5,24 @@
         <meta charset="UTF-8">
         <title>数据排布 - Rust 编程思想</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
@@ -19,8 +30,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -36,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -148,6 +160,62 @@
                 <div id="content" class="content">
                     <main>
                         <h2><a class="header" href="#数据排布" id="数据排布">数据排布</a></h2>
+<p>如前所述，你有时会需要对内存的精细控制，为此，首先你需要理解在内存中数据是如何排布的。</p>
+<p>数据可能存在于寄存器、缓存、内存、硬盘等任何地方，但程序执行时，操作系统对于程序运行时所需要访问的数据提供了一层抽象：程序所操作的数据，要么跟随函数调用在栈上存取，要么自由存放在堆中。栈空间中的数据，根据函数调用和返回、空间会被自动分配和放回，而且由于栈的后进先出特性，每个函数调用时分配的空间是固定的；而堆上的数据可以脱离函数调用关系独立地存在，分配和放回需要主动执行相应的操作。我们首先具体观察一下函数调用栈，以及 Rust 中如何表达栈上的数据及操作。</p>
+<p>函数内的数据可根据函数调用关系自然地组成栈结构：函数调用时数据入栈，函数退出时数据出栈。更具体而言，函数调用时，将函数的参数首先入栈（填充数据并移动栈顶指针），然后预留一段预先指定大小的空间（仅移动指针不填充数据）供函数使用，这时函数可以进一步调用其他函数（继续入栈），或执行操作后返回，将自身的数据、参数等出栈，将返回值置于栈顶。数据以一个十分规整的方式组织，每个函数可以<strong>静态</strong>地得知自身数据的位置，因而可以直接访问（即不需要通过查找地址访问）。另外，这种规整性也带来更高的要求：函数预留的数据大小必须<strong>静态</strong>地确知、不能改变。</p>
+<p>Rust 中通过变量和类型来静态地确定函数预留空间的大小。如下面的例子：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+fn main() {
+    let a: i32 = 0;
+    println!(&quot;{}&quot;, mem::size_of_val(&amp;a));  // -&gt; 4
+}
+</code></pre></pre>
+<p>编译器可以通过统计函数中有哪些变量、每个变量对应的类型所占空间大小，在编译期静态地确定一个函数需要多大的栈空间。你也注意到，Rust 的基础数值类型从名字上就能确定占用空间（<code>i32</code> 类型占用 32 比特位），这可以说是 Rust 明确性（explicitness）的第一次体现。</p>
+<p>由基础数据类型组成的复合类型也是必不可少的。其中大小比较容易确定的是数组（array，固定大小的、单一类型的顺序容器）、元组（tuple，定长、异构的顺序容器）和结构体（struct，多种类型复合的数据结构）。需要额外讨论的是枚举类型（enum）。枚举类型为什么存在会在后面讲述，只要注意到枚举类型的变量必须是几个变种中的一个，因此实际数据需要的空间设置为最大的那个变种需要的空间大小即可，另外还需要一些空间来存储具体是哪个变种。在一些场合，是哪个变种可以通过数值确定，因而这部分额外空间也可以不要。</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+
+struct Point { x: f64, y: f64 }
+
+fn main() {
+    println!(&quot;{}&quot;, mem::size_of::&lt;i32&gt;());              // -&gt; 4
+    println!(&quot;{}&quot;, mem::size_of::&lt;[i32; 10]&gt;());        // -&gt; 40
+    println!(&quot;{}&quot;, mem::size_of::&lt;Point&gt;());            // -&gt; 16
+    println!(&quot;{}&quot;, mem::size_of::&lt;Result&lt;i32, f64&gt;&gt;()); // -&gt; 16
+    println!(&quot;{}&quot;, mem::size_of::&lt;Option&lt;&amp;i32&gt;&gt;());     // -&gt; 8 (pointer size); notice null pointer optimization
+}
+</code></pre></pre>
+<p>所有这些大小可静态获知的类型，均可以直接放置在栈上，也就可以在函数中作为局部变量、函数参数和返回值使用。值得一提的是，Rust 还进一步从语言层面明确了哪些类型是大小可静态获知的：每个这样的类型都实现了 <code>Sized</code> trait。那些大小不可知的类型，并不是为了保存数据而存在的，关于它们的作用我们暂且不提。</p>
+<p>总结而言，Rust 通过变量表示一段栈空间，通过变量的类型明确了变量的存储方式。下一步是对变量的操作。对局部变量（即栈上的一段空间）的操作，在很多语言中都笼统地用赋值指代了。然而各种赋值中实际发生的事其实并不那么单纯。考虑 C 语言中的下面几种情况：</p>
+<pre><code class="language-c">int a, b, c;
+a = 3;
+b = a;
+c = some_func_returning_int(b);
+</code></pre>
+<ol>
+<li>初始化</li>
+<li>拷贝内容</li>
+<li>传递参数，接收返回，“移动”而不是拷贝</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">#[derive(Copy, Clone)]
+struct Point { x: f64, y: f64 }
+
+fn main() {
+    let mut a = Point { x: 3.0, y: 4.0 };
+    let b = a;
+    a.x = 5.0;
+    println!(&quot;{}&quot;, a.x);  // -&gt; 5.0
+    println!(&quot;{}&quot;, b.x);  // -&gt; 3.0
+}
+</code></pre></pre>
+<!--
+* 如前所述，你有时会需要对内存的精细控制。特别的，你需要理解内存中的数据排布
+* 栈和堆：数据可能存在寄存器、缓存、内存、硬盘等任何地方，但程序执行时，操作系统对于数据提供了一层抽象：程序所操作的数据，要么跟随函数调用在栈上存取，要么自由存放在堆中。
+* 栈上数据、堆上数据的不同：前者跟随函数调用、自动分配和放回、大小编译时确知，数据地址生命周期跟随函数生命周期；后者脱离函数调用、需要要自行分配和放回，数据地址存在悬垂指针、二次释放等问题。
+* 详细分析栈：本质上是函数调用栈，栈上的数值（变量和变量类型，明确区分），地址（表示地址的类型系统），栈上的赋值（拷贝），函数返回，地址的生命周期概念。
+* 静态数据：整个程序生命周期都存在
+* 引入堆：为什么需要堆（https://stackoverflow.com/a/10483164），堆上数据和地址的不同：需要分配和释放，为什么及如何明确栈和堆的区别，实现跟随调用栈的生命周期
+* 一些问题：赋值的复杂性、拷贝导致的问题、函数返回导致的问题、rc/gc的代价，引出下一节所有权机制和移动的概念
+-->
 
                     </main>
 
@@ -191,10 +259,10 @@
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

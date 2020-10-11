@@ -7,13 +7,24 @@
         
         <meta name="robots" content="noindex" />
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
@@ -21,8 +32,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -38,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -158,7 +170,7 @@
 </blockquote>
 <p>实际上，对计算机越多控制，越需要对计算机深入理解，这从本质上就是绕不开的，而 rust 认识到了这一点。Rust 作为系统编程语言，没有试图遮遮掩掩，而是将所有底层细节在语言层面，较以前更为提前、更为明确地暴露出来。举例而言，C 和 C++ 中，一个 struct 的主要数据存储在栈还是堆上，是不能很显然看出来的，本质上也是因为指针就没有对应的区分；但 rust 中栈和堆上的“指针”是有不同的语法语义的，在更高的 struct 层次，数据存储位置也可以很明显地通过 Copy trait 区分。类似这些也导致了 rust 的一个广为人知的特点：很难通过编译，学习成本极高。但这并不是 rust 的劣势，rust 其实并没有平添复杂性，而是把本来的复杂性尽可能早地真实完整地暴露给使用者而已。一方面它打碎了一些不切实际的假象，而另一方面，一旦你写出可以通过编译的 rust 程序，你会对程序拥有前所未有的信心，因为语言虽不能保证你万无一失，但在努力保证你完全清楚你在做的事情。</p>
 <p>第二，rust 在不失明确的前提下，利用尽可能强大的<strong>抽象</strong>（abstraction），让使用者不至于迷失在细节当中。抽象而不失细节的最好例子可能是数学，也正是得益于其明确性。相比更加数学化的语言（如 Haskell），rust 借鉴了其中大量抽象思想，但除了对数学化抽象本身对明确性、又增加了对系统的明确性，使得 rust 很好地将高层抽象和底层细节合并起来。这让 rust 成为一个表达力毫不落伍的系统级语言。</p>
-<p>值得一提的是，rust 在数学性的抽象（函数等）、和为语法简洁的存在的语言特征（宏）之间，有较为明显的区分，这也是之前不曾有的。甚至在你的第一个“你好，世界”程序里，rust 也会通过 <code>!</code> 明确告诉你，<code>println!</code> 不是个单纯的函数，而只是一组程序的简洁写法。我们可以认为宏是语言词法层次的抽象：可将一套无法用前述抽象机制实现、但形式上多有繁复的代码片段，抽象为一个新的词法；或者通俗而言，可以就理解为编写代码的代码（即所谓元编程）。这样的区分，使得 rust 能维持精简而专注的抽象内核，同时仍然能提供大量实际便利；另一方面，明确这种区分，也如前文所说，能够不失精细控制、提升对程序对认识和信心。</p>
+<p>值得一提的是，rust 在数学性的抽象（函数等）、和为语法简洁的存在的语言特征（宏）之间，有较为明显的区分，这也是之前不曾有的。甚至在你的第一个“你好，世界”程序里，rust 也会通过 <code>!</code> 明确告诉你，<code>println!</code> 不是个单纯的（数学性的）函数，而只是一组程序的简洁写法。我们可以认为宏是语言词法层次的抽象：可将一套无法用前述抽象机制实现、但形式上多有繁复的代码片段，抽象为一个新的词法；或者通俗而言，可以就理解为编写代码的代码（即所谓元编程）。这样的区分，使得 rust 能维持精简而专注的抽象内核，同时仍然能提供大量实际便利；另一方面，明确这种区分，也如前文所说，能够不失精细控制、提升对程序对认识和信心。</p>
 <p>可以说，这两条是 rust 能作为系统语言存在的前提和优势所在。Rust 程序员第一本教科书（<a href="https://doc.rust-lang.org/book/">The Rust Programming Language</a>）特意提到 rust 的核心价值是<strong>赋能</strong>（empowerment），也正是从这两点中体现：rust 程序员从明确中获得更多信心，从高度抽象中获得处理更复杂事务的能力和更广阔的可能性。当然 rust 远不止于此，诸多设计选择、实现细节、还有很多来自当前时代其他语言的最佳实践中，也都蕴含了许多思想。这些或零或整、或明或暗的思想，这些思想对语言的影响，以及这些思想对于编译器实现会有哪些新的需求，正是本书的主题。虽不敢说完整通透，也至少能管中窥豹、可见一斑。</p>
 <p>由于本书的目的是在思想和思维方式的层面讨论 rust，所有的语言细节均是用来体现思想的例子，因此这本书绝不能算是 rust 或系统编程的入门教程，对 rust 的介绍也并不全面和系统。基于此，这本书并不是很适合初学计算机或编程语言的人阅读。第一次接触一个事物，最重要的还是要保持兴趣，和做以前做不到的事。思考、总结、优化往往是后话。</p>
 <blockquote>
@@ -167,11 +179,12 @@
 </blockquote>
 <p>Rust 至今仍算是个正在快速发展的语言，谁也无法做到完整掌握，更无法预测未来，对其他语言也如是。作为程序员该如何思考编程本身、如何发展完善自己的思考方式和思维过程，或许比理解语言更为重要，因为这些是不会过时的。这就好比摄影师更需要理解光线和构图，而不是相机的操作细节。这也是写作本书的最大动机了。</p>
 <h1><a class="header" href="#内存控制" id="内存控制">内存控制</a></h1>
+<!-- 增加性能和瓶颈更泛化的叙述， -->
 <p>程序员常常会问自己这样一个问题，如何提高我的程序的性能？有个有点偷懒但很有效的答案，就是寻找当前的<strong>性能瓶颈</strong>并优化它。更具体一点说，性能瓶颈一般在哪呢？第一有可能的瓶颈自然是算法，但第二可能便是内存控制了。</p>
 <blockquote>
 <p>程序 = 算法 + 数据结构 （或者更简单的版本：<strong>程序 = 过程 + 数据</strong>）</p>
 </blockquote>
-<p>除了性能问题之外，类似的程序员希望对内存有更精细的控制的场合还有很多。但长久以来，系统程序员似乎面临着这样的困境：在现有的语言中，选择了更多更底层的控制，就意味着更容易出错；而选择了安全保障，则意味着更少控制。类似的抉择常常在是否要垃圾回收上体现：选择垃圾回收，你可以获得对内存访问的更多保障，如没有内存泄露问题，也没有悬垂指针、二次释放等广泛存在的内存安全问题，但你也因此无法直接触碰内存、控制内存的排布，无法决定何时回收垃圾，从而失去了一些优化的可能（编译器或虚拟机有时会帮你优化，你也可以通过编码技巧来促进这种优化，但终究比较间接）。</p>
+<p>除了性能问题之外，程序员希望对内存有更精细的控制的场合还有很多。但长久以来，系统程序员似乎面临着这样的困境：在现有的语言中，选择了更多更底层的控制，就意味着更容易出错；而选择了安全保障，则意味着更少控制。类似的抉择常常在是否要垃圾回收上体现：选择垃圾回收，你可以获得对内存访问的更多保障，如没有内存泄露问题，也没有悬垂指针、二次释放等广泛存在的内存安全问题，但你也因此无法直接触碰内存、控制内存的排布，无法决定何时回收垃圾，从而失去了一些优化的可能（编译器或虚拟机有时会帮你优化，你也可以通过编码技巧来促进这种优化，但终究比较间接）。</p>
 <p>我们不禁要问，底层控制和安全性真的无法同时保障吗？可以明确的事，越接近底层控制，程序员越需要对底层深入了解，面对的状况也越复杂。但复杂性并不直接意味着失去安全性，仅仅是提供安全保障也不意味着削弱控制。也就是说底层控制和安全保障并不是直接冲突的。我们真正需要解决的是复杂性的问题。</p>
 <p>泛泛而言，复杂性导致出错不外乎如下几个原因：</p>
 <ul>
@@ -189,6 +202,62 @@ https://docs.rust-embedded.org/book/static-guarantees/index.html
 https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 -->
 <h2><a class="header" href="#数据排布" id="数据排布">数据排布</a></h2>
+<p>如前所述，你有时会需要对内存的精细控制，为此，首先你需要理解在内存中数据是如何排布的。</p>
+<p>数据可能存在于寄存器、缓存、内存、硬盘等任何地方，但程序执行时，操作系统对于程序运行时所需要访问的数据提供了一层抽象：程序所操作的数据，要么跟随函数调用在栈上存取，要么自由存放在堆中。栈空间中的数据，根据函数调用和返回、空间会被自动分配和放回，而且由于栈的后进先出特性，每个函数调用时分配的空间是固定的；而堆上的数据可以脱离函数调用关系独立地存在，分配和放回需要主动执行相应的操作。我们首先具体观察一下函数调用栈，以及 Rust 中如何表达栈上的数据及操作。</p>
+<p>函数内的数据可根据函数调用关系自然地组成栈结构：函数调用时数据入栈，函数退出时数据出栈。更具体而言，函数调用时，将函数的参数首先入栈（填充数据并移动栈顶指针），然后预留一段预先指定大小的空间（仅移动指针不填充数据）供函数使用，这时函数可以进一步调用其他函数（继续入栈），或执行操作后返回，将自身的数据、参数等出栈，将返回值置于栈顶。数据以一个十分规整的方式组织，每个函数可以<strong>静态</strong>地得知自身数据的位置，因而可以直接访问（即不需要通过查找地址访问）。另外，这种规整性也带来更高的要求：函数预留的数据大小必须<strong>静态</strong>地确知、不能改变。</p>
+<p>Rust 中通过变量和类型来静态地确定函数预留空间的大小。如下面的例子：</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+fn main() {
+    let a: i32 = 0;
+    println!(&quot;{}&quot;, mem::size_of_val(&amp;a));  // -&gt; 4
+}
+</code></pre></pre>
+<p>编译器可以通过统计函数中有哪些变量、每个变量对应的类型所占空间大小，在编译期静态地确定一个函数需要多大的栈空间。你也注意到，Rust 的基础数值类型从名字上就能确定占用空间（<code>i32</code> 类型占用 32 比特位），这可以说是 Rust 明确性（explicitness）的第一次体现。</p>
+<p>由基础数据类型组成的复合类型也是必不可少的。其中大小比较容易确定的是数组（array，固定大小的、单一类型的顺序容器）、元组（tuple，定长、异构的顺序容器）和结构体（struct，多种类型复合的数据结构）。需要额外讨论的是枚举类型（enum）。枚举类型为什么存在会在后面讲述，只要注意到枚举类型的变量必须是几个变种中的一个，因此实际数据需要的空间设置为最大的那个变种需要的空间大小即可，另外还需要一些空间来存储具体是哪个变种。在一些场合，是哪个变种可以通过数值确定，因而这部分额外空间也可以不要。</p>
+<pre><pre class="playground"><code class="language-rust">use std::mem;
+
+struct Point { x: f64, y: f64 }
+
+fn main() {
+    println!(&quot;{}&quot;, mem::size_of::&lt;i32&gt;());              // -&gt; 4
+    println!(&quot;{}&quot;, mem::size_of::&lt;[i32; 10]&gt;());        // -&gt; 40
+    println!(&quot;{}&quot;, mem::size_of::&lt;Point&gt;());            // -&gt; 16
+    println!(&quot;{}&quot;, mem::size_of::&lt;Result&lt;i32, f64&gt;&gt;()); // -&gt; 16
+    println!(&quot;{}&quot;, mem::size_of::&lt;Option&lt;&amp;i32&gt;&gt;());     // -&gt; 8 (pointer size); notice null pointer optimization
+}
+</code></pre></pre>
+<p>所有这些大小可静态获知的类型，均可以直接放置在栈上，也就可以在函数中作为局部变量、函数参数和返回值使用。值得一提的是，Rust 还进一步从语言层面明确了哪些类型是大小可静态获知的：每个这样的类型都实现了 <code>Sized</code> trait。那些大小不可知的类型，并不是为了保存数据而存在的，关于它们的作用我们暂且不提。</p>
+<p>总结而言，Rust 通过变量表示一段栈空间，通过变量的类型明确了变量的存储方式。下一步是对变量的操作。对局部变量（即栈上的一段空间）的操作，在很多语言中都笼统地用赋值指代了。然而各种赋值中实际发生的事其实并不那么单纯。考虑 C 语言中的下面几种情况：</p>
+<pre><code class="language-c">int a, b, c;
+a = 3;
+b = a;
+c = some_func_returning_int(b);
+</code></pre>
+<ol>
+<li>初始化</li>
+<li>拷贝内容</li>
+<li>传递参数，接收返回，“移动”而不是拷贝</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">#[derive(Copy, Clone)]
+struct Point { x: f64, y: f64 }
+
+fn main() {
+    let mut a = Point { x: 3.0, y: 4.0 };
+    let b = a;
+    a.x = 5.0;
+    println!(&quot;{}&quot;, a.x);  // -&gt; 5.0
+    println!(&quot;{}&quot;, b.x);  // -&gt; 3.0
+}
+</code></pre></pre>
+<!--
+* 如前所述，你有时会需要对内存的精细控制。特别的，你需要理解内存中的数据排布
+* 栈和堆：数据可能存在寄存器、缓存、内存、硬盘等任何地方，但程序执行时，操作系统对于数据提供了一层抽象：程序所操作的数据，要么跟随函数调用在栈上存取，要么自由存放在堆中。
+* 栈上数据、堆上数据的不同：前者跟随函数调用、自动分配和放回、大小编译时确知，数据地址生命周期跟随函数生命周期；后者脱离函数调用、需要要自行分配和放回，数据地址存在悬垂指针、二次释放等问题。
+* 详细分析栈：本质上是函数调用栈，栈上的数值（变量和变量类型，明确区分），地址（表示地址的类型系统），栈上的赋值（拷贝），函数返回，地址的生命周期概念。
+* 静态数据：整个程序生命周期都存在
+* 引入堆：为什么需要堆（https://stackoverflow.com/a/10483164），堆上数据和地址的不同：需要分配和释放，为什么及如何明确栈和堆的区别，实现跟随调用栈的生命周期
+* 一些问题：赋值的复杂性、拷贝导致的问题、函数返回导致的问题、rc/gc的代价，引出下一节所有权机制和移动的概念
+-->
 <h2><a class="header" href="#所有权控制" id="所有权控制">所有权控制</a></h2>
 <h2><a class="header" href="#借用规则与打破规则" id="借用规则与打破规则">借用：规则与打破规则</a></h2>
 <h2><a class="header" href="#并发中的内存模型" id="并发中的内存模型">并发中的内存模型</a></h2>
@@ -207,6 +276,13 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 <h1><a class="header" href="#元编程" id="元编程">元编程</a></h1>
 <h2><a class="header" href="#利用元编程简化编码" id="利用元编程简化编码">利用元编程简化编码</a></h2>
 <h2><a class="header" href="#宏理解和控制编译行为" id="宏理解和控制编译行为">宏：理解和控制编译行为</a></h2>
+<!-- 
+参考：
+https://doc.rust-lang.org/reference/macros.html
+https://blog.rust-lang.org/2018/12/21/Procedural-Macros-in-Rust-2018.html
+https://github.com/dtolnay/proc-macro-workshop
+https://doc.rust-lang.org/edition-guide/introduction.html
+-->
 <h2><a class="header" href="#元编程的能力与极限" id="元编程的能力与极限">元编程的能力与极限</a></h2>
 
                     </main>
@@ -235,10 +311,10 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
