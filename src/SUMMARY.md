@@ -1,6 +1,6 @@
 [简介](0-0-intro.md)
 
-- [内存控制](1-0-memory.md)
+- [内存管理](1-0-memory.md)
   - [数据排布](1-1-layout.md)
   - [所有权控制](1-2-ownership.md)
   - [借用：规则与打破规则](1-3-borrowing.md)
