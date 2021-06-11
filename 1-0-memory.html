@@ -3,39 +3,28 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>内存控制 - Rust 编程思想</title>
-        
-        
-
+        <title>内存管理 - Rust 编程思想</title>
+                
 
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
-        <link rel="icon" href="favicon.svg">
-        
-        
-        <link rel="shortcut icon" href="favicon.png">
-        
-        <link rel="stylesheet" href="css/variables.css">
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
         
-        <link rel="stylesheet" href="css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
@@ -43,9 +32,7 @@
 
         <!-- Custom theme stylesheets -->
         
-
-        
-    </head>
+            </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -95,8 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html" class="active"><strong aria-hidden="true">1.</strong> 内存控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-layout.html"><strong aria-hidden="true">1.1.</strong> 数据排布</a></li><li class="chapter-item expanded "><a href="1-2-ownership.html"><strong aria-hidden="true">1.2.</strong> 所有权控制</a></li><li class="chapter-item expanded "><a href="1-3-borrowing.html"><strong aria-hidden="true">1.3.</strong> 借用：规则与打破规则</a></li><li class="chapter-item expanded "><a href="1-4-concurrency.html"><strong aria-hidden="true">1.4.</strong> 并发中的内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-coding-paradigm.html"><strong aria-hidden="true">2.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-functional.html"><strong aria-hidden="true">2.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="2-2-enum.html"><strong aria-hidden="true">2.2.</strong> 枚举和模式匹配</a></li><li class="chapter-item expanded "><a href="2-3-zero-cost.html"><strong aria-hidden="true">2.3.</strong> 零代价抽象</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-design.html"><strong aria-hidden="true">3.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-abstraction.html"><strong aria-hidden="true">3.1.</strong> 数据抽象和操作抽象：struct 和 trait</a></li><li class="chapter-item expanded "><a href="3-2-dynamic.html"><strong aria-hidden="true">3.2.</strong> 动态性：泛型和多态</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程组织</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-mods.html"><strong aria-hidden="true">4.1.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-2-crates.html"><strong aria-hidden="true">4.2.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-3-tests.html"><strong aria-hidden="true">4.3.</strong> 测试</a></li></ol></li><li class="chapter-item expanded "><a href="5-0-metaprogramming.html"><strong aria-hidden="true">5.</strong> 元编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5-1-simplify.html"><strong aria-hidden="true">5.1.</strong> 利用元编程简化编码</a></li><li class="chapter-item expanded "><a href="5-2-macro.html"><strong aria-hidden="true">5.2.</strong> 宏：理解和控制编译行为</a></li><li class="chapter-item expanded "><a href="5-3-cans-and-cannots.html"><strong aria-hidden="true">5.3.</strong> 元编程的能力与极限</a></li></ol></li></ol>
-            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html" class="active"><strong aria-hidden="true">1.</strong> 内存管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-layout.html"><strong aria-hidden="true">1.1.</strong> 数据排布</a></li><li class="chapter-item expanded "><a href="1-2-ownership.html"><strong aria-hidden="true">1.2.</strong> 所有权控制</a></li><li class="chapter-item expanded "><a href="1-3-borrowing.html"><strong aria-hidden="true">1.3.</strong> 借用：规则与打破规则</a></li><li class="chapter-item expanded "><a href="1-4-concurrency.html"><strong aria-hidden="true">1.4.</strong> 并发中的内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-coding-paradigm.html"><strong aria-hidden="true">2.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-functional.html"><strong aria-hidden="true">2.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="2-2-enum.html"><strong aria-hidden="true">2.2.</strong> 枚举和模式匹配</a></li><li class="chapter-item expanded "><a href="2-3-zero-cost.html"><strong aria-hidden="true">2.3.</strong> 零代价抽象</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-design.html"><strong aria-hidden="true">3.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-abstraction.html"><strong aria-hidden="true">3.1.</strong> 数据抽象和操作抽象：struct 和 trait</a></li><li class="chapter-item expanded "><a href="3-2-dynamic.html"><strong aria-hidden="true">3.2.</strong> 动态性：泛型和多态</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程组织</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-mods.html"><strong aria-hidden="true">4.1.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-2-crates.html"><strong aria-hidden="true">4.2.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-3-tests.html"><strong aria-hidden="true">4.3.</strong> 测试</a></li></ol></li><li class="chapter-item expanded "><a href="5-0-metaprogramming.html"><strong aria-hidden="true">5.</strong> 元编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5-1-simplify.html"><strong aria-hidden="true">5.1.</strong> 利用元编程简化编码</a></li><li class="chapter-item expanded "><a href="5-2-macro.html"><strong aria-hidden="true">5.2.</strong> 宏：理解和控制编译行为</a></li><li class="chapter-item expanded "><a href="5-3-cans-and-cannots.html"><strong aria-hidden="true">5.3.</strong> 元编程的能力与极限</a></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,29 +106,24 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
-                    </div>
+                                            </div>
 
                     <h1 class="menu-title">Rust 编程思想</h1>
 
                     <div class="right-buttons">
-                        
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+                                                                        
                     </div>
                 </div>
 
-                
-                <div id="search-wrapper" class="hidden">
+                                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -151,7 +132,6 @@
                     </div>
                 </div>
                 
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -163,23 +143,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#内存控制" id="内存控制">内存控制</a></h1>
-<!-- 增加性能和瓶颈更泛化的叙述， -->
-<p>程序员常常会问自己这样一个问题，如何提高我的程序的性能？有个有点偷懒但很有效的答案，就是寻找当前的<strong>性能瓶颈</strong>并优化它。更具体一点说，性能瓶颈一般在哪呢？第一有可能的瓶颈自然是算法，但第二可能便是内存控制了。</p>
+                        <h1 id="内存管理"><a class="header" href="#内存管理">内存管理</a></h1>
 <blockquote>
 <p>程序 = 算法 + 数据结构 （或者更简单的版本：<strong>程序 = 过程 + 数据</strong>）</p>
 </blockquote>
-<p>除了性能问题之外，程序员希望对内存有更精细的控制的场合还有很多。但长久以来，系统程序员似乎面临着这样的困境：在现有的语言中，选择了更多更底层的控制，就意味着更容易出错；而选择了安全保障，则意味着更少控制。类似的抉择常常在是否要垃圾回收上体现：选择垃圾回收，你可以获得对内存访问的更多保障，如没有内存泄露问题，也没有悬垂指针、二次释放等广泛存在的内存安全问题，但你也因此无法直接触碰内存、控制内存的排布，无法决定何时回收垃圾，从而失去了一些优化的可能（编译器或虚拟机有时会帮你优化，你也可以通过编码技巧来促进这种优化，但终究比较间接）。</p>
-<p>我们不禁要问，底层控制和安全性真的无法同时保障吗？可以明确的事，越接近底层控制，程序员越需要对底层深入了解，面对的状况也越复杂。但复杂性并不直接意味着失去安全性，仅仅是提供安全保障也不意味着削弱控制。也就是说底层控制和安全保障并不是直接冲突的。我们真正需要解决的是复杂性的问题。</p>
-<p>泛泛而言，复杂性导致出错不外乎如下几个原因：</p>
-<ul>
-<li>对复杂性理解不足；</li>
-<li>繁琐的细节中出错；</li>
-<li>疲于应付繁琐细节、导致整体逻辑出错。</li>
-</ul>
-<p>解决问题也应该是对症下药，通过明确化来直面复杂性，和通过抽象来解决复杂性。</p>
-<p><strong>直面复杂性</strong>：复杂性越直接暴露，也就越能促使程序员深入了解背后发生了什么。系统编程最为复杂的部分便是内存控制。因而，本章节将介绍内存机制如何在 rust 中显式呈现、不同的内存操作对操作对象有何要求、以及 rust 所提供的不同层次的安全保障和所要付出代价之间的显式权衡，最后以并发编程为例，展示这种明确化的潜在力量。</p>
-<p><strong>应对复杂性</strong>：几乎每一本计算机科学的书都会谈到，应对复杂性最佳方式是抽象，而 rust 的抽象机制将在后续章节中介绍。</p>
+<p>如今，用很多编程语言（如 Python）写程序，很多时候我们并不需要关心我们所操作的数据在哪里，还在不在那。这些语言不仅保证在你还需要一份数据的时候，它能够随时被访问到，很多时候它们还做一些更为隐蔽的内存操作，让你不必考虑它们在内存中的何处、为它们最初的分配空间是否足够、多余的空间是否浪费，等等。</p>
+<p>这些自动化的内存管理都无可争议地大大简化了编程的思维方式。但如同计算机科学中的每一个话题，在获得一项好处的同时，必然意味着对另一些的舍弃。很多时候这种取舍确实是值得的（这就是为什么 Python、Java 等语言总是在最受欢迎的语言列表中），但它并不是所有情况下的最佳选项。在讨论另一种的解决方案之前，我们首先了解一下大多数编程语言为了更简单的内存管理，都舍弃了些什么。</p>
+<p>首先，为了提供一个更加简单的数据访问模型，一些额外的性能损失是无法避免的。这些损失包括维持访问模型的直接开销，如在 Java 中，程序不需要关心数据所占用的内存空间何时分配、何时释放，但 JVM 需要通过额外的垃圾回收机制保证数据的分配和释放；也包括无法实现最优的内存排布所导致的间接损失，这种损失既可能来自于程序员不了解内存排布对性能的影响而无意编写出的低效程序，也可能最优的方案由于语言限制根本就无法实现。如果应用本身对于性能并不敏感，这些损失我们可以不必在意，而不断发展的编译器优化技术也在缓解这两类性能损失。然而，在性能高度敏感的基础性应用中，这些额外损耗就变得不那么能接受了。</p>
+<p>除了执行性能的损失外，为了提供简化的数据访问模型，语言的运行时（Runtime）也会变得更加庞大。每个程序语言的运行时需要构建起程序的抽象模型到实际机器的桥梁，程序抽象越远离机器，这座桥梁就需要越大。在有些语言中，这座桥梁所要承载的功能太过复杂，以至于语言提供了专门的解释器/虚拟机层来实现。这些语言的运行时往往十分庞大（如 Node.js 运行时超过 30MB，Java 运行时超过 100MB）。另一些语言（即编译型语言，如 C、C++、Go 等）通过实现运行时库函数（runtime library）来构建这类桥梁，更简化的模型也将不可避免地带来更大的库函数。同样，这个问题很多时候都不算是问题，但在系统编程中，即使这样的问题也值得锱铢必较。</p>
+<p>【失去底层控制】</p>
+<p>读到这里，也许你想：“这些问题我都不是很在意，这本书我不必看了。”你也许对于很多语言提供的抽象比较满意，也愿意付出一些代价。但这种模式还存在一个问题：往往你要付出的代价是隐性的、强制的。这有点像你去办电信业务，你总会想知道你的套餐包含哪些服务、分别要多少费用，你还应当能够随时退订你不需要的服务、从而不再为它们付钱。但不同语言提供的“服务”更像是一种不能更改的套餐，你也不能明确知道你在为什么付出代价。一旦将来有一天你觉得当前的代价过高，你很难知道到底是什么服务导致的，很多时候你甚至根本无法退订这些服务。</p>
+<p>总结而言，当前的编程语言为了提供更简单的内存管理，削弱了程序的效率和控制力，也影响了你选择的权利，而这些都成为了 C / C++ 等底层系统语言仍然存在的关键理由。</p>
+<p>习惯了高级程序语言的程序员，可能会觉得 C 语言的内存管理充满了陷阱。其中的原因也很好理解：真实的机器其实并不如抽象模型中的那样简洁，而 C 语言作为更加接近机器的底层语言，既不会替你考虑、也不会为你掩盖这些细枝末节。【问题：容易出错】</p>
+<p>C++ 通过为 C 语言增添不同的编程范式，似乎为这一问题提供了一个解决思路：提供给程序员更多的工具，程序员就可以通过很多手段从细枝末节中脱离出来。这里似乎蕴含了一个假定：程序越容易编写，就越不容易出错，然而这个假定本身也有些偏颇。【1. 细节和复杂性终究存在，“容易”到底是处理了复杂性还是在掩盖复杂性？2. 使用工具的终究是人，更多的工具会不会成为更多错误的源泉？】</p>
+<p>错误的真正来源是人对于复杂性难以处理。掩盖复杂性并不可取，把复杂性更加直接、更加明确地呈现出来似乎才是正确的道路。而真正处理复杂性的手段，在计算机科学的历史中也无数次被证明，不是期待人去解决更复杂的问题，而是依靠抽象的手段、让人能够解决更简单问题。</p>
+<p>下面我们就从明确复杂性出发，看看 Rust 是如何将内存管理的细节通过语言本身呈现出来的。</p>
+<!-- 
+程序员常常会问自己这样一个问题，如何提高我的程序的性能？有个有点偷懒但很有效的答案，就是寻找程序当前的**性能瓶颈**并优化它。那么更具体一点说，性能瓶颈一般在哪呢？第一有可能的瓶颈自然是算法，但第二可能便是内存控制了。
+
+> 程序 = 算法 + 数据结构 （或者更简单的版本：**程序 = 过程 + 数据**）
+
+对于程序而言，内存是操作系统提供的一种即时的、高效的数据存储的抽象，然而这种高效不是完美的：内存的访问速度终究有限，内存本身也并非无穷大，内存的分配、释放、移动等都需要一定的管理成本。为了应对这些问题，硬件和操作系统实现了多级缓存等机制，能够在很多情况下直接带来隐式的效率提升，但这仍不意味着程序可以以任意的方式使用内存。对于程序而言，若能够了解和规避内存的局限性、充分运用缓存等底层机制，仔细地规划内存的使用，程序的性能常常能够得到更深度的优化。
+
+除了宽泛的性能问题之外，程序员希望对内存有更精细的控制的场合还有很多，比如对确定性或实时性有较高要求的场合，系统资源高度受限的场合，针对操作系统底层进行开发的场合等。但长久以来，系统程序员似乎面临着这样的困境：在现有的语言中，选择了更多更底层的控制，就意味着更容易出错；而选择了安全保障，则意味着更少控制。类似的抉择常常在是否要垃圾回收上体现：选择垃圾回收，你可以获得对内存访问的更多保障，如没有内存泄露问题，也没有悬垂指针、二次释放等广泛存在的内存安全问题，但你也因此无法直接触碰内存、控制内存的排布，无法决定（或者难以决定）何时回收垃圾，从而失去了一些优化的可能（编译器或虚拟机有时会帮你优化，你也可以通过编码技巧来促进这种优化，但终究比较间接和不可控）。
+
+那么，底层控制和安全性真的无法同时保障吗？需要首先明确的是，越接近底层控制，程序员越需要对底层机制有深入的了解，面对的状况也越复杂，这个复杂性是无法规避的。但复杂性并不直接意味着失去安全性，仅仅是提供安全保障也不意味着必须削弱控制。也就是说底层控制和安全保障并不是直接冲突的。我们真正需要解决的是复杂性的问题。
+
+泛泛而言，复杂性导致出错不外乎如下几个原因：
+
+* 对复杂性理解不足；
+* 繁琐的细节中出错；
+* 疲于应付繁琐细节、导致整体逻辑出错。
+
+解决问题也应该是对症下药，通过明确化来直面复杂性，和通过抽象来解决复杂性。
+
+**直面复杂性**：复杂性越直接暴露，也就越能促使程序员深入了解背后发生了什么。系统编程最为复杂的部分便是内存控制。因而，本章节将介绍内存机制如何在 rust 中显式呈现、不同的内存操作对操作对象有何要求、以及 rust 所提供的不同层次的安全保障和所要付出代价之间的显式权衡，最后以并发编程为例，展示这种明确化的潜在力量。
+
+**应对复杂性**：几乎每一本计算机科学的书都会谈到，应对复杂性最佳方式是抽象，而 rust 的抽象机制将在后续章节中介绍。 -->
 <!--
 参考：
 https://doc.rust-lang.org/nomicon/index.html
@@ -191,67 +191,49 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                            <a rel="prev" href="0-0-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="0-0-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-
-                        
-                            <a rel="next" href="1-1-layout.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="1-1-layout.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                    <a rel="prev" href="0-0-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="0-0-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-
-                
-                    <a rel="next" href="1-1-layout.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="1-1-layout.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
-            </nav>
+                            </nav>
 
         </div>
 
         
-
         
-
         
-
-        
-        <script type="text/javascript">
+                <script type="text/javascript">
             window.playground_copyable = true;
         </script>
         
-
         
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
         
-
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
-
         
-
     </body>
 </html>
