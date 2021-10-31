@@ -1,0 +1,9 @@
+[book]
+authors = ["Yu Yin"]
+language = "zh-cn"
+multilingual = false
+src = "src"
+title = "Better Programming with Rust"
+
+[output.html]
+mathjax-support = true
