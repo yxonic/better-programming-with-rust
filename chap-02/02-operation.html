@@ -3,40 +3,35 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>数据的表示和操作 - Rust 编程思想</title>
-                
-
+        <title>操作数据 - Better Programming with Rust</title>
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -82,14 +77,14 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html"><strong aria-hidden="true">1.</strong> 内存管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-data.html" class="active"><strong aria-hidden="true">1.1.</strong> 数据的表示和操作</a></li><li class="chapter-item expanded "><a href="1-2-pointer.html"><strong aria-hidden="true">1.2.</strong> 指针类型</a></li><li class="chapter-item expanded "><a href="1-3-heap.html"><strong aria-hidden="true">1.3.</strong> 堆空间管理</a></li><li class="chapter-item expanded "><a href="1-4-string-and-container.html"><strong aria-hidden="true">1.4.</strong> 字符串和容器</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-design.html"><strong aria-hidden="true">2.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-abstraction.html"><strong aria-hidden="true">2.1.</strong> 数据抽象和操作抽象</a></li><li class="chapter-item expanded "><a href="2-2-adt.html"><strong aria-hidden="true">2.2.</strong> 抽象数据类型</a></li><li class="chapter-item expanded "><a href="2-3-trait.html"><strong aria-hidden="true">2.3.</strong> 操作抽象和实现</a></li><li class="chapter-item expanded "><a href="2-4-param-and-bound.html"><strong aria-hidden="true">2.4.</strong> 参数类型和约束</a></li><li class="chapter-item expanded "><a href="2-5-conversion.html"><strong aria-hidden="true">2.5.</strong> 类型转换</a></li><li class="chapter-item expanded "><a href="2-6-fn.html"><strong aria-hidden="true">2.6.</strong> 函数和闭包</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-coding-paradigm.html"><strong aria-hidden="true">3.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-functional.html"><strong aria-hidden="true">3.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="3-2-type-driven.html"><strong aria-hidden="true">3.2.</strong> 类型驱动设计</a></li><li class="chapter-item expanded "><a href="3-3-generics.html"><strong aria-hidden="true">3.3.</strong> 泛型编程</a></li><li class="chapter-item expanded "><a href="3-4-meta.html"><strong aria-hidden="true">3.4.</strong> 元编程</a></li><li class="chapter-item expanded "><a href="3-5-oop.html"><strong aria-hidden="true">3.5.</strong> 面向对象编程</a></li><li class="chapter-item expanded "><a href="3-6-concurrency.html"><strong aria-hidden="true">3.6.</strong> 并发编程</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程开发</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-names.html"><strong aria-hidden="true">4.1.</strong> 名字管理</a></li><li class="chapter-item expanded "><a href="4-2-mods.html"><strong aria-hidden="true">4.2.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-3-crates.html"><strong aria-hidden="true">4.3.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-4-build.html"><strong aria-hidden="true">4.4.</strong> 构建管理</a></li><li class="chapter-item expanded "><a href="4-5-toolchain.html"><strong aria-hidden="true">4.5.</strong> 开发工具链</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00-preface.html">前言</a></li><li class="chapter-item expanded "><a href="../chap-01/00-index.html"><strong aria-hidden="true">1.</strong> 程序的作用</a></li><li class="chapter-item expanded "><a href="../chap-02/00-index.html"><strong aria-hidden="true">2.</strong> 从数据开始思考</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chap-02/01-data-representation.html"><strong aria-hidden="true">2.1.</strong> 数据的表达</a></li><li class="chapter-item expanded "><a href="../chap-02/02-operation.html" class="active"><strong aria-hidden="true">2.2.</strong> 操作数据</a></li><li class="chapter-item expanded "><a href="../chap-02/03-program-execution.html"><strong aria-hidden="true">2.3.</strong> 理解程序的运行</a></li><li class="chapter-item expanded "><a href="../chap-02/04-data-transfer.html"><strong aria-hidden="true">2.4.</strong> 数据的传递</a></li></ol></li><li class="chapter-item expanded "><a href="../chap-03/00-index.html"><strong aria-hidden="true">3.</strong> 数据管理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> 指针：作用和性质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> 理解内存</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> 堆空间的利用和管理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> 指针和容器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> 设计数据结构</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-04/00-index.html"><strong aria-hidden="true">4.</strong> 类型的抽象和设计</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> 类型的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> 抽象数据类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> 行为抽象</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> 参数类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> 类型驱动设计</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-05/00-index.html"><strong aria-hidden="true">5.</strong> 用程序表达思想</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> 函数式编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> 泛型编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> 并行编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> 异步编程</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-06/00-index.html"><strong aria-hidden="true">6.</strong> 用程序编写程序</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> 元编程的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> 编译时和运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> 理解编译过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> 程序的抽象和变换</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> 何时使用元编程</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-07/00-index.html"><strong aria-hidden="true">7.</strong> 错误的发现和处理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> 错误的起源</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> 程序中的错误处理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> 利用设计减少错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> 利用工具发现错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.5.</strong> 测试：意义和方法</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-08/00-index.html"><strong aria-hidden="true">8.</strong> 程序优化</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> 优化的类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> 定位瓶颈：原理和方法</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> 算法和数据结构</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.</strong> 系统优化</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.5.</strong> 设计优化：重构</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-09/00-index.html"><strong aria-hidden="true">9.</strong> 程序组织</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.1.</strong> 逻辑组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.</strong> 接口组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.3.</strong> 模块、包和项目</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.4.</strong> 真实项目的组织</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-10/00-index.html"><strong aria-hidden="true">10.</strong> 构建和产出</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> 构建目标</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 理解构建过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 项目的附加产出</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.4.</strong> 版本和发布</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-11/00-index.html"><strong aria-hidden="true">11.</strong> 程序的运行环境</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> 语言运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> 操作系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> 嵌入式系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> 虚拟运行环境</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-12/00-index.html"><strong aria-hidden="true">12.</strong> 与其他语言共处</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 调用其他语言</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> 供其他语言使用</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> 协同工作</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.4.</strong> 思想的碰撞</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-13/00-index.html"><strong aria-hidden="true">13.</strong> 重新思考编程</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">13.1.</strong> 本质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.2.</strong> 渐进</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.3.</strong> 权衡</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.4.</strong> 局限</div></li></ol></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,22 +101,21 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                                            </div>
+                    </div>
 
-                    <h1 class="menu-title">Rust 编程思想</h1>
+                    <h1 class="menu-title">Better Programming with Rust</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
+                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
@@ -131,7 +125,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -143,21 +136,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="数据的表示和操作"><a class="header" href="#数据的表示和操作">数据的表示和操作</a></h2>
-<h3 id="变量和类型"><a class="header" href="#变量和类型">变量和类型</a></h3>
-<p>所有的数据在计算机中，本质上都是以二进制的形式存在的。直接操作所有二进制数据是不现实的，程序需要一种方式来指定所需数据、并以正确的方式解读数据，而后才能对数据进行操作，从而完成程序逻辑。因此，我们一般将程序用到的数据理解为一个个<strong>数据对象</strong>，每个数据对象代表一块具有特定含义的数据。为了指定我们需要的数据对象，我们自然可以给每个数据对象编号，但是为其起一个具有实际含义的名字，往往更加有利于我们追踪和操作每个数据对象。我们也可以人为地记住每个名字对应的数据对象如何解读，但是为每个名字指定一个类型来表达其存取方式，会大幅减轻我们的记忆负担。</p>
-<p>于是，和大多数程序设计语言一样，Rust 通过变量来表示程序中所用到的数据对象，通过变量的类型来记录数据的存取方式。我们还可以使用 <code>let</code> 语句给变量起名字，随后即可以清晰地表达对数据操作：</p>
+                        <h1 id="操作数据"><a class="header" href="#操作数据">操作数据</a></h1>
+<p>和大多数编程语言一样，在 Rust 中，我们通过<strong>变量</strong>来指代程序中所用到的数据对象。每个变量都绑定着一个确定的<strong>类型</strong>，Rust 通过变量的类型来明确数据的存取方式。我们通过 <code>let</code> 语句创建一个变量：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let a: i32;       // 声明变量，直接标注变量类型
-    a = 3;            // 写入变量数据（赋初值）
-    let b = 5;        // 也可在声明时直接赋值，即定义变量
-    let c = a + b;    // 将两个i32类型相加的结果定义为新变量
-                      // 变量类型可以通过计算结果自动推断
+    // 定义新变量
+    let a = 3;
+    let b = 5;
+    // 将两个变量相加的结果定义为新变量
+    let c = a + b;
+    // 上面几个变量的类型都通过计算结果自动推断
     println!(&quot;a + b is: {}&quot;, c);  // -&gt; 8
 }
 </code></pre></pre>
-<p>在保证指代关系清晰、没有歧义的情况下，rust 中的变量名是可以重复使用的，你只需要重新定义一个同名变量，新变量的类型也可以和之前不同。</p>
-<p>在允许同名的情况下，规定每个名字的作用范围就变得很有意义，这样你不需要担心一个名字被意外覆盖掉，在你不知情的情况下具有了其他含义。Rust 中通过大括号明确变量的作用范围（即作用域），每个作用域内定义的变量名，不会对作用域之外的名字产生任何影响。</p>
+<p>由于名字是对于数据对象的一个指代，像代数中的字母、或者自然语言中的代词一样，名字是可以重复使用、用来指代不同的数据对象的。在允许名字重复使用的情况下，明确每个名字的所指、避免歧义，对程序而言就十分关键了。</p>
+<p>这样你不需要担心一个名字被意外覆盖掉，在你不知情的情况下具有了其他含义。Rust 中通过大括号明确变量的作用范围（即作用域），每个作用域内定义的变量名，不会对作用域之外的名字产生任何影响。</p>
 <p>我们可以简单地将 <code>let</code> 视为分配新名字的工具。在作用域结束或出现新的同名的 <code>let</code> 之前，分配的名字将始终指代一个具有特定类型的数据对象：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let a = 3;
@@ -173,7 +165,7 @@
 </code></pre></pre>
 <p>变量除了起到指代数据对象的作用之外，还通过类型明确了数据对象的存取方式。这是什么意思呢？我们以 <code>i32</code> 类型为例，这个类型事实上规定了程序通过 32 个二进制位存储该类型的数据对象，且这些二进制位将作为整数来读取（更具体而言是按照补码的方式）。</p>
 <p>Rust 中的基本类型都如 <code>i32</code> 这样<strong>明确</strong>规定了数据的存取格式和所占空间大小，如 <code>u8</code> 表示 8 位无符号整数（即一个字节），<code>f64</code> 表示 64 位浮点数（即 C 语言中的双精度浮点数 double）等等。</p>
-<h3 id="基本数学操作"><a class="header" href="#基本数学操作">基本数学操作</a></h3>
+<h2 id="基本数学操作"><a class="header" href="#基本数学操作">基本数学操作</a></h2>
 <p>Rust 中最基本的类型是各种数值类型，这些数值类型也是计算机表达所有运算逻辑的基础。我们在之前的例子中已经看到，两个整数类型变量能够和数学上的整数一样进行加法运算，然而计算机中的运算和数学运算并不是完全等价的。我们来看一个例子：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let a = 64i8;  // 通过 i8 后缀指定该值为 i8 类型
@@ -191,7 +183,7 @@
 }
 </code></pre></pre>
 <p>在 Rust 中，类型支持的操作，往往都像这样通过在该类型对象上调用<strong>方法</strong>表示。任何类型都可以定义自己的方法，包括最基本的数值类型。比如，<code>i32</code> 类型支持的操作可以在 https://doc.rust-lang.org/std/primitive.i32.html 查到。</p>
-<h3 id="表达式和代码块"><a class="header" href="#表达式和代码块">表达式和代码块</a></h3>
+<h2 id="表达式和代码块"><a class="header" href="#表达式和代码块">表达式和代码块</a></h2>
 <p>目前我们接触的数据操作，都遵循类似的模式：首先计算结果，然后将计算出的值用变量记录、或直接输出。事实上，我们甚至可以更普适地认为，计算结果是实现数据操作的核心。我们将能够计算结果的一段语法结构称为表达式，我们所说的“计算结果”更确切来讲就是对表达式求值。</p>
 <p>我们已经见过几种比较基本的表达式形式：字面值表达式，算术表达式，以及方法调用。【解释字面值表达式】。算术表达式我们都比较熟悉，和数学上（或计算器上）的形式是一致的。方法调用（或函数调用）的形式也比较好理解，但其具体含义我们后面会深入探讨。【强调它们都可以求值】</p>
 <p>除这些显然可以求值的语法结构之外，将更多的语法结构视为表达式是很有好处的。首先，可以求值是一个附加的好处，你永远可以忽略这个值，让它成为一次单纯的操作，就像 C 语言中的各种语句一样。其次，将操作建立在“求值”这一基本概念上，提供了对编程思维的另一个层次的抽象。我们对比下面三个例子：</p>
@@ -238,7 +230,7 @@
 <p>【break和continue，代码块标记】</p>
 <p>【在没有返回值的表达式中做有意义的事：“状态”和状态的改变。】</p>
 <p>【在引入状态之前，考虑是否需要状态，是否可以用 map 解决。举基本例子。更多关于闭包和函数式编程后面再讲。】</p>
-<h3 id="赋值表达式和-mut-变量"><a class="header" href="#赋值表达式和-mut-变量">赋值表达式和 <code>mut</code> 变量</a></h3>
+<h2 id="赋值表达式和-mut-变量"><a class="header" href="#赋值表达式和-mut-变量">赋值表达式和 <code>mut</code> 变量</a></h2>
 <p>通过表达式来表达程序逻辑，很多时候你是在建立数据间的映射或转换关系。这更像一个数学上的计算：根据算式计算结果，算式本身是固定的，计算结果也是固定的、不可变的。这对应到内存中，则意味着每个数据对象都是只读的，我们不断将表达式求出的值放置在新的数据对象里、而不会修改原有的对象。由这种方式构建的数据操作，为程序提供了一个最基本的保障：每个数据对象在它的整个生命周期中，都将不会被修改，这让这些数据操作能够保证一个可控、可预测的结果。</p>
 <p>然而如前所述，我们需要在程序中引入“状态”的概念。相比前面的只读变量（虽然它们不可变，我们仍然沿用变量一词），状态额外增加了修改的需求。具体而言，作为状态的变量将不再是只读的、不可变的，你应当可以给变量写入新的值，直到下次写入前，变量将保持这一值不变。</p>
 <p>Rust 利用 <code>mut</code>变量表示可变的状态，用赋值表达式来表达对状态的写入或改变。这仍然基于明确性的需求：当你需要在程序中引入一个可变的状态时，你需要通过 <code>mut</code> <strong>明确</strong>提出要求，否则，变量默认都是只读的。</p>
@@ -256,49 +248,38 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="1-0-memory.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../chap-02/01-data-representation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-                                                    <a rel="next" href="1-2-pointer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../chap-02/03-program-execution.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="1-0-memory.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../chap-02/01-data-representation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-                                    <a rel="next" href="1-2-pointer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../chap-02/03-program-execution.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                            </nav>
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-        
     </body>
 </html>

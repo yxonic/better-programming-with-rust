@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>数据的表达 - Better Programming with Rust</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00-preface.html">前言</a></li><li class="chapter-item expanded "><a href="../chap-01/00-index.html"><strong aria-hidden="true">1.</strong> 程序的作用</a></li><li class="chapter-item expanded "><a href="../chap-02/00-index.html"><strong aria-hidden="true">2.</strong> 从数据开始思考</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chap-02/01-data-representation.html" class="active"><strong aria-hidden="true">2.1.</strong> 数据的表达</a></li><li class="chapter-item expanded "><a href="../chap-02/02-operation.html"><strong aria-hidden="true">2.2.</strong> 操作数据</a></li><li class="chapter-item expanded "><a href="../chap-02/03-program-execution.html"><strong aria-hidden="true">2.3.</strong> 理解程序的运行</a></li><li class="chapter-item expanded "><a href="../chap-02/04-data-transfer.html"><strong aria-hidden="true">2.4.</strong> 数据的传递</a></li></ol></li><li class="chapter-item expanded "><a href="../chap-03/00-index.html"><strong aria-hidden="true">3.</strong> 数据管理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> 指针：作用和性质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> 理解内存</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> 堆空间的利用和管理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> 指针和容器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> 设计数据结构</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-04/00-index.html"><strong aria-hidden="true">4.</strong> 类型的抽象和设计</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> 类型的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> 抽象数据类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> 行为抽象</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> 参数类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> 类型驱动设计</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-05/00-index.html"><strong aria-hidden="true">5.</strong> 用程序表达思想</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> 函数式编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> 泛型编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> 并行编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> 异步编程</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-06/00-index.html"><strong aria-hidden="true">6.</strong> 用程序编写程序</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> 元编程的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> 编译时和运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> 理解编译过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> 程序的抽象和变换</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> 何时使用元编程</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-07/00-index.html"><strong aria-hidden="true">7.</strong> 错误的发现和处理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> 错误的起源</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> 程序中的错误处理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> 利用设计减少错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> 利用工具发现错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.5.</strong> 测试：意义和方法</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-08/00-index.html"><strong aria-hidden="true">8.</strong> 程序优化</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> 优化的类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> 定位瓶颈：原理和方法</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> 算法和数据结构</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.</strong> 系统优化</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.5.</strong> 设计优化：重构</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-09/00-index.html"><strong aria-hidden="true">9.</strong> 程序组织</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.1.</strong> 逻辑组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.</strong> 接口组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.3.</strong> 模块、包和项目</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.4.</strong> 真实项目的组织</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-10/00-index.html"><strong aria-hidden="true">10.</strong> 构建和产出</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> 构建目标</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 理解构建过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 项目的附加产出</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.4.</strong> 版本和发布</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-11/00-index.html"><strong aria-hidden="true">11.</strong> 程序的运行环境</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> 语言运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> 操作系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> 嵌入式系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> 虚拟运行环境</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-12/00-index.html"><strong aria-hidden="true">12.</strong> 与其他语言共处</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 调用其他语言</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> 供其他语言使用</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> 协同工作</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.4.</strong> 思想的碰撞</div></li></ol></li><li class="chapter-item expanded "><a href="../chap-13/00-index.html"><strong aria-hidden="true">13.</strong> 重新思考编程</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">13.1.</strong> 本质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.2.</strong> 渐进</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.3.</strong> 权衡</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.4.</strong> 局限</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Better Programming with Rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="数据的表达"><a class="header" href="#数据的表达">数据的表达</a></h1>
+<p>为了能够表达一个确定的具体的事物，我们需要一段确定的、具有特定含义的二进制数据：需要一种方式明确指定这段数据，也需要在不同场合始终保持以相同的方式解读这段数据。我们一般将程序用到的具有特定含义的数据称为<strong>数据对象</strong>。为了指定我们需要的数据对象，我们可以为它起一个名字用来指代；而为了明确数据对象的解读方式，我们也应当为它指定一个类型。</p>
+<p>现实的概念表达为数据，最简单也是最直观的例子是数，但这个例子中也有足够多的精细考虑，从而能够作为用数据表达概念的良好示范。</p>
+<p>整数转换成二进制本身是容易的，你可以将转换的结果作为整数的计算机表示。在此基础上，小数也可以通过科学记数法来记录：用表示整数的方式分别记录有效数字和幂次。然而我们知道，一段数据的长度，在计算机中终究是有限的，能够表达的信息也是有限的，这意味着并不是所有的数都能在计算机中表达。于是，不管你设计怎样的数据表示方式，都是对真实概念的一种近似。数据表达概念的常见思考，就集中在考虑数据有何种需要、从而决定近似（或者说抽象）到何种程度。</p>
+<p>我们从整数的数据表示开始考虑：一个常见而有效的表示方法，就是设定几种固定的数据位数，以表示不同的范围的整数，让程序可以根据需要自行选择使用。设定的每种整数都规定了数据的存取方式（占用多少位？如何解读？），因此我们即是设定了几种不同范围的整数类型（对于负整数，计算机中往往采用补码表示，具体原因超过了本书的范围）。实数的表示也类似：我们规定几位用来表示有效数字、几位用来表示幂次，即是设定了不同范围和精度的实数类型（实际的实数表示更加复杂，需要考虑无限大、不存在等情况如何表达，参考 <a href="https://zh.wikipedia.org/wiki/IEEE_754">IEEE 754</a> 标准）。我们观察 Rust 中的几种数值类型，来理解每种类型是如何对应不同数据表示规则的：</p>
+<table><thead><tr><th align="center">类型名</th><th align="center">占用位数</th><th align="center">字节数</th><th align="center">数值范围</th></tr></thead><tbody>
+<tr><td align="center"><code>u8</code></td><td align="center">8</td><td align="center">1</td><td align="center">0-255</td></tr>
+<tr><td align="center"><code>u16</code></td><td align="center">16</td><td align="center">2</td><td align="center">0-65535</td></tr>
+</tbody></table>
+<p>我们需要记得，每种表示都是一种近似，对应真实概念的一种思维模型：在一定<strong>范围</strong>内，我们将一个概念如此表示和解读。很多时候，我们也会将类型视为所有它能表示的事物或概念的集合，来更加方便和直观地讨论它表示的范围。对数据的思考包含了对数据类型范围的思考。我们对于范围的边界应当更加谨慎，要确定类型能够表达的集合和所要解决问题的需要是匹配的。</p>
+<p>边界的存在促使我们有意识地思考：会不会超出这个边界？如果超出了该怎么办呢？对于数值类型而言，计算的结果超出类型能够表示的范围我们一般称为越界（或者叫溢出）。比如，如果两个 <code>u8</code> 类型的数相加，结果超过了 <code>u8</code> 能够表示的范围，就发生了越界。我们会看到，越界处理方式实际上不止一种，而且几种处理方式都很合情合理。</p>
+<p>最简单的处理方式可能是直接禁止超过范围的结果。如果超过类型能够表示的范围，程序直接报错。我们也可以把超过范围的部分忽略，这样也相当于实现了模为 256 的同余加法（比如128+128=0 (mod 256)，正好等于忽略高位的结果）。我们有时也可以认为范围内最大值表示了“最大”这个概念，这样我们可以把过大的结果用范围内能表示的最大值表示（这样 128+128 会得到 <code>u8</code> 类型所能表示的最大值 <code>u8::MAX</code>，即 255）。你可以通过如下方式在 Rust 中指定采用哪种方式：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // 128u8 means number 128 with type u8
+    // 128u8 + 128u8 would cause an error
+    assert!(128u8.wrapping_add(128u8) == 0);
+    assert!(128u8.saturating_add(128u8) == u8::MAX);
+}
+</code></pre></pre>
+<p>默认情况下不允许越界看似过于严格，然而，将最简单、最保守、最少假设的情况作为默认情况，能够促使我们对于自己的选择更加有意识（conscious）：每种不同的选择都会在程序中被明确表达，这些选择应当是我们知情的、有意的、主动的选择，如此我们就不会无意识间将两个正数相加得到一个更小的数甚至是负数；而如果这确实是我们的本意，程序会更加清晰地把这一意图表达出来。我们之后还会在 Rust 中看到很多类似的例子。</p>
+<p>我们可以支持更多的数据类型用来表达更复杂的数据，但让数据真正发挥价值的不是提供更多的预先定义的数据类型，而是提供由现有类型组合形成新数据类型的方式。如果我们将类型视为它所能表达的事物的集合，那么新类型的构造，正对应了现有类型对应集合之间的集合运算。这样理解有助于我们更加全面、更加抽象地理解数据类型的组合方式。</p>
+<p>最基本的组合产生新数据类型的方式是结构体（struct），它对应几种类型数据的所有可能组合。这类似集合之间的笛卡尔积：比如我们定义一个新数据类型 <code>Point</code> 如下：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Point(f64, f64);
+<span class="boring">}
+</span></code></pre></pre>
+<p>那么 <code>Point</code> 类型所能表达的集合是两个 <code>f64</code> 表达集合的笛卡尔积，我们即可用它来表示二维空间中的一个点。</p>
+<p>对于 struct 类型，Rust 中还提供了几种不同的形式供不同场合使用，但它们的本质是一致的，区别只在于是否为类型本身和类型中的元素命名：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// (f64, f64) is a anonymous tuple type
+let a: (f64, f64);
+// Point is a tuple struct
+struct Point(f64, f64);
+// NamedPoint is a struct with named fields
+struct NamedPoint {
+    x: f64,
+    y: f64,
+} 
+<span class="boring">}
+</span></code></pre></pre>
+<p>我们还可以组合多个相同类型，类似集合的幂。比如我们想表示一个 \(N\) 维向量（对应幂集 \(\mathbb{R}^N\)），在 Rust 中可以写 <code>[f64; N]</code>（N 是固定的）。</p>
+<p>这些产生新数据类型的方式，直觉上来看其实都对应着集合的乘积。也许因为这种方式更加直观、或更接近计算机的工作原理，这种方式在几乎所有语言中都有实现。然而我们将知道，这并不是唯一可行的组合方式，也不是我们唯一需要的组合方式。实际上，产生新数据类型的方法很大程度决定了一个语言<strong>类型系统</strong>的表达能力，我们将在第 4 章深入探讨为什么我们需要更强大的表达能力、以及我们能用一个强大的类型系统来干什么。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chap-02/00-index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chap-02/02-operation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chap-02/00-index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chap-02/02-operation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

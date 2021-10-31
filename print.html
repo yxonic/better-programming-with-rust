@@ -3,37 +3,32 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Rust 编程思想</title>
-                <meta name="robots" content="noindex" />
-                
-
+        <title>Better Programming with Rust</title>
+        <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -83,14 +78,14 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="0-0-intro.html">简介</a></li><li class="chapter-item expanded "><a href="1-0-memory.html"><strong aria-hidden="true">1.</strong> 内存管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-1-data.html"><strong aria-hidden="true">1.1.</strong> 数据的表示和操作</a></li><li class="chapter-item expanded "><a href="1-2-pointer.html"><strong aria-hidden="true">1.2.</strong> 指针类型</a></li><li class="chapter-item expanded "><a href="1-3-heap.html"><strong aria-hidden="true">1.3.</strong> 堆空间管理</a></li><li class="chapter-item expanded "><a href="1-4-string-and-container.html"><strong aria-hidden="true">1.4.</strong> 字符串和容器</a></li></ol></li><li class="chapter-item expanded "><a href="2-0-design.html"><strong aria-hidden="true">2.</strong> 设计抽象</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-1-abstraction.html"><strong aria-hidden="true">2.1.</strong> 数据抽象和操作抽象</a></li><li class="chapter-item expanded "><a href="2-2-adt.html"><strong aria-hidden="true">2.2.</strong> 抽象数据类型</a></li><li class="chapter-item expanded "><a href="2-3-trait.html"><strong aria-hidden="true">2.3.</strong> 操作抽象和实现</a></li><li class="chapter-item expanded "><a href="2-4-param-and-bound.html"><strong aria-hidden="true">2.4.</strong> 参数类型和约束</a></li><li class="chapter-item expanded "><a href="2-5-conversion.html"><strong aria-hidden="true">2.5.</strong> 类型转换</a></li><li class="chapter-item expanded "><a href="2-6-fn.html"><strong aria-hidden="true">2.6.</strong> 函数和闭包</a></li></ol></li><li class="chapter-item expanded "><a href="3-0-coding-paradigm.html"><strong aria-hidden="true">3.</strong> 编码范式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-1-functional.html"><strong aria-hidden="true">3.1.</strong> 函数式编程</a></li><li class="chapter-item expanded "><a href="3-2-type-driven.html"><strong aria-hidden="true">3.2.</strong> 类型驱动设计</a></li><li class="chapter-item expanded "><a href="3-3-generics.html"><strong aria-hidden="true">3.3.</strong> 泛型编程</a></li><li class="chapter-item expanded "><a href="3-4-meta.html"><strong aria-hidden="true">3.4.</strong> 元编程</a></li><li class="chapter-item expanded "><a href="3-5-oop.html"><strong aria-hidden="true">3.5.</strong> 面向对象编程</a></li><li class="chapter-item expanded "><a href="3-6-concurrency.html"><strong aria-hidden="true">3.6.</strong> 并发编程</a></li></ol></li><li class="chapter-item expanded "><a href="4-0-engineering.html"><strong aria-hidden="true">4.</strong> 工程开发</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4-1-names.html"><strong aria-hidden="true">4.1.</strong> 名字管理</a></li><li class="chapter-item expanded "><a href="4-2-mods.html"><strong aria-hidden="true">4.2.</strong> 模块组织</a></li><li class="chapter-item expanded "><a href="4-3-crates.html"><strong aria-hidden="true">4.3.</strong> 包和包管理</a></li><li class="chapter-item expanded "><a href="4-4-build.html"><strong aria-hidden="true">4.4.</strong> 构建管理</a></li><li class="chapter-item expanded "><a href="4-5-toolchain.html"><strong aria-hidden="true">4.5.</strong> 开发工具链</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-preface.html">前言</a></li><li class="chapter-item expanded "><a href="chap-01/00-index.html"><strong aria-hidden="true">1.</strong> 程序的作用</a></li><li class="chapter-item expanded "><a href="chap-02/00-index.html"><strong aria-hidden="true">2.</strong> 从数据开始思考</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chap-02/01-data-representation.html"><strong aria-hidden="true">2.1.</strong> 数据的表达</a></li><li class="chapter-item expanded "><a href="chap-02/02-operation.html"><strong aria-hidden="true">2.2.</strong> 操作数据</a></li><li class="chapter-item expanded "><a href="chap-02/03-program-execution.html"><strong aria-hidden="true">2.3.</strong> 理解程序的运行</a></li><li class="chapter-item expanded "><a href="chap-02/04-data-transfer.html"><strong aria-hidden="true">2.4.</strong> 数据的传递</a></li></ol></li><li class="chapter-item expanded "><a href="chap-03/00-index.html"><strong aria-hidden="true">3.</strong> 数据管理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> 指针：作用和性质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> 理解内存</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> 堆空间的利用和管理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> 指针和容器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> 设计数据结构</div></li></ol></li><li class="chapter-item expanded "><a href="chap-04/00-index.html"><strong aria-hidden="true">4.</strong> 类型的抽象和设计</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> 类型的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> 抽象数据类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> 行为抽象</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> 参数类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> 类型驱动设计</div></li></ol></li><li class="chapter-item expanded "><a href="chap-05/00-index.html"><strong aria-hidden="true">5.</strong> 用程序表达思想</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> 函数式编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> 泛型编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> 并行编程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> 异步编程</div></li></ol></li><li class="chapter-item expanded "><a href="chap-06/00-index.html"><strong aria-hidden="true">6.</strong> 用程序编写程序</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> 元编程的意义</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> 编译时和运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> 理解编译过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> 程序的抽象和变换</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> 何时使用元编程</div></li></ol></li><li class="chapter-item expanded "><a href="chap-07/00-index.html"><strong aria-hidden="true">7.</strong> 错误的发现和处理</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> 错误的起源</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> 程序中的错误处理</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> 利用设计减少错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> 利用工具发现错误</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.5.</strong> 测试：意义和方法</div></li></ol></li><li class="chapter-item expanded "><a href="chap-08/00-index.html"><strong aria-hidden="true">8.</strong> 程序优化</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> 优化的类型</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> 定位瓶颈：原理和方法</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> 算法和数据结构</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.4.</strong> 系统优化</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.5.</strong> 设计优化：重构</div></li></ol></li><li class="chapter-item expanded "><a href="chap-09/00-index.html"><strong aria-hidden="true">9.</strong> 程序组织</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.1.</strong> 逻辑组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.</strong> 接口组织</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.3.</strong> 模块、包和项目</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.4.</strong> 真实项目的组织</div></li></ol></li><li class="chapter-item expanded "><a href="chap-10/00-index.html"><strong aria-hidden="true">10.</strong> 构建和产出</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> 构建目标</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 理解构建过程</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 项目的附加产出</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.4.</strong> 版本和发布</div></li></ol></li><li class="chapter-item expanded "><a href="chap-11/00-index.html"><strong aria-hidden="true">11.</strong> 程序的运行环境</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> 语言运行时</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> 操作系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> 嵌入式系统</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> 虚拟运行环境</div></li></ol></li><li class="chapter-item expanded "><a href="chap-12/00-index.html"><strong aria-hidden="true">12.</strong> 与其他语言共处</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">12.1.</strong> 调用其他语言</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.2.</strong> 供其他语言使用</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> 协同工作</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.4.</strong> 思想的碰撞</div></li></ol></li><li class="chapter-item expanded "><a href="chap-13/00-index.html"><strong aria-hidden="true">13.</strong> 重新思考编程</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">13.1.</strong> 本质</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.2.</strong> 渐进</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.3.</strong> 权衡</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.4.</strong> 局限</div></li></ol></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -107,22 +102,21 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                                            </div>
+                    </div>
 
-                    <h1 class="menu-title">Rust 编程思想</h1>
+                    <h1 class="menu-title">Better Programming with Rust</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
+                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
@@ -132,7 +126,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -145,76 +138,70 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="前言"><a class="header" href="#前言">前言</a></h1>
-<p>当你理解了一门语言的思想，其语法往往是自然而然的。反过来，一门语言最有趣的也正是它的思想。虽说世上不可能有完美的语言，所有语言都要在各种矛盾中权衡而做不到万全，但这不妨碍 rust 有几处思想颇有见地。而其中最广泛存在和影响这门语言的，可能是如下两条：</p>
-<p>第一，rust 鼓励甚至强制实现<strong>明确化</strong>（explicitness），让程序员对他在做的事完全了解和掌控。绝大多数编程语言似乎都营造了一个假象，即你不需要熟悉计算机的工作原理、不需要熟悉编译器的工作机制，也能够编写程序解决问题。这种假象，或者由于语言追求简单，【举例】；又或者由于语言想要提供足够的自由，【举例】。这种假象对于更高层的问题是好事：它绕开了许多复杂的细节，让程序员能够专心解决问题本身。但是对于更加底层的问题，这种假象就不怎么有价值了。</p>
-<p>解决越底层的问题，越需要对计算机深入理解，这从本质上是绕不开的，而 rust 很清楚这一点。Rust 作为系统编程语言，并没有试图维护你不需要理解系统底层细节的假象，相反，它将所有底层细节在语言层面，较其他语言更为提前、更为明确地暴露出来。举例而言，C 和 C++ 中，一个 struct 的主要数据存储在栈还是堆上，是不能很显然看出来的，本质上也是因为指针就没有对应的区分；但 rust 中栈和堆上的“指针”是有不同的语法语义的，在更高的 struct 层次，数据存储位置也可以很明显地通过 Copy trait 区分。类似这些也导致了 rust 的一个广为人知的特点：很难通过编译，学习成本极高。但这并不是 rust 的劣势，rust 其实并没有平添复杂性，而是把本来的复杂性尽可能早地真实完整地暴露给使用者而已。一方面它打碎了一些不切实际的假象，而另一方面，一旦你写出可以通过编译的 rust 程序，你会对程序拥有前所未有的信心，因为语言虽不能保证你万无一失，但在努力保证你完全清楚你在做的事情。</p>
-<p>第二，rust 在不失明确的前提下，利用尽可能强大的<strong>抽象</strong>（abstraction），让使用者不至于迷失在细节当中。抽象而不失细节的最好例子可能是数学，也正是得益于其明确性。对比更加数学化的语言（如 Haskell），rust 借鉴了其中大量抽象思想，但除了对数学化抽象本身的明确性、又增加了对系统的明确性，使得 rust 很好地将高层抽象和底层细节合并起来。这让 rust 作为一个系统级语言，表达力也能够毫不落伍。</p>
-<p>值得一提的是，rust 在数学性的抽象（函数等）、和为了让功能使用变得更加容易而存在的语言特征（宏）之间，有较为明显的区分，这也是之前不曾有的。甚至在你的第一个“你好，世界”程序里，rust 也会通过 <code>!</code> 明确告诉你，<code>println!</code> 不是个单纯的（数学性的）函数，而只是一组程序的简洁写法。我们可以认为宏是语言词法层次的抽象：可将一套无法用前述抽象机制实现、但形式上多有繁复的代码片段，抽象为一个新的词法；或者通俗而言，可以就理解为操作代码本身的代码（即所谓元编程）。这样的区分，使得 rust 能维持精简而专注的抽象内核，同时仍然能提供大量实际便利；另一方面，明确这种区分，也如前文所说，能够不失精细控制、提升对程序的认识和信心。</p>
-<p>可以说，这两条是 rust 能作为系统语言存在的前提和优势所在。Rust 程序员第一本教科书（<a href="https://doc.rust-lang.org/book/">The Rust Programming Language</a>）特意提到 rust 的核心价值是<strong>赋能</strong>（empowerment），也正是从这两点中体现：rust 程序员从明确中获得更多信心，从高度抽象中获得处理更复杂事务的能力和更广阔的可能性。当然 rust 远不止于此，诸多设计选择、实现细节、还有很多来自当前时代其他语言的最佳实践中，也都蕴含了许多思想。这些或零或整、或明或暗的思想，这些思想对语言的影响，以及这些思想对于编译器实现会有哪些新的需求，正是本书的主题。虽不敢说完整通透，也至少能管中窥豹、可见一斑。</p>
-<p>由于本书的目的是在思想和思维方式的层面讨论 rust，所有的语言细节均是用来体现思想的例子，因此这本书绝不能算是 rust 或系统编程的入门教程，对 rust 的介绍也并不全面和系统。基于此，这本书并不是很适合初学计算机或编程语言的人阅读。第一次接触一个事物，最重要的还是要保持兴趣，尝试做以前做不到的事。思考、总结、优化往往是后话。</p>
-<blockquote>
-<p>Premature optimization is the root of all evil. （过早优化是万恶之源。）</p>
-<p>— Donald Knuth</p>
-</blockquote>
-<p>Rust 至今仍算是个正在快速发展的语言，谁也无法做到完整掌握，更无法预测未来。这一点对很多其他语言也是成立的。作为程序员该如何思考编程本身、如何发展完善自己的思考方式和思维过程，或许比理解一门特定的语言更为重要，因为这些是不会过时的。这就好比摄影师更需要理解光线和构图，而不是相机的操作细节。这也是写作本书的最大动机了。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="内存管理"><a class="header" href="#内存管理">内存管理</a></h1>
-<blockquote>
-<p>程序 = 算法 + 数据结构 （或者更简单的版本：<strong>程序 = 过程 + 数据</strong>）</p>
-</blockquote>
-<p>如今，用很多编程语言（如 Python）写程序时，我们并不需要关心我们所操作的数据在哪里、还在不在那。这些语言不仅保证在你还需要一份数据的时候，它能够随时被访问到，很多时候它们还做一些更为隐蔽的内存操作，让你不必考虑数据存放在内存中的何处、为它们最初的分配空间是否足够、多余的空间是否浪费，等等。</p>
-<p>这些自动化的内存管理都无可争议地大大简化了编程的思维方式。但如同计算机科学中的每一个话题，在获得一项好处的同时，必然意味着对另一些的舍弃。很多时候这种取舍确实是值得的（这就是为什么 Python、Java 等语言总是在最受欢迎的语言列表中），但它并不是所有情况下的最佳选项。在讨论另一种的解决方案之前，我们首先了解一下大多数编程语言为了更简单的内存管理，都舍弃了些什么。</p>
-<p>首先，为了提供一个更加简单的数据访问模型，一些额外的性能损失是无法避免的。这些损失包括维持访问模型的直接开销，如在 Java 中，程序不需要关心数据所占用的内存空间何时分配、何时释放，但 JVM 需要通过额外的垃圾回收机制保证数据的分配和释放；也包括无法实现最优的内存排布所导致的间接损失，这种损失既可能来自于程序员不了解内存排布对性能的影响而无意编写出的低效程序，也可能最优的方案由于语言限制根本就无法实现。如果应用本身对于性能并不敏感，这些损失我们可以不必在意，而不断发展的编译器优化技术也在缓解这两类性能损失。然而，在性能高度敏感的基础性应用中，这些额外损耗就变得不那么能接受了。</p>
-<p>除了执行性能的损失外，为了提供简化的数据访问模型，语言的运行时（Runtime）也会变得更加庞大。每个程序语言的运行时需要构建起程序的抽象模型到实际机器的桥梁，程序抽象越远离机器，这座桥梁就需要越大。在有些语言中，这座桥梁所要承载的功能太过复杂，以至于语言提供了专门的解释器/虚拟机层来实现。这些语言的运行时往往十分庞大（如 Node.js 运行时超过 30MB，Java 运行时超过 100MB）。另一些语言（即编译型语言，如 C、C++、Go 等）通过实现运行时库函数（runtime library）来构建这类桥梁，更简化的模型也将不可避免地带来更大的库函数。同样，这个问题很多时候都不算是问题，但在系统编程中，即使这样的问题也值得锱铢必较。</p>
-<p>除了额外的消耗，由于你不再直接操作内存，你事实上失去了对最底层机器的直接控制。底层控制不仅意味着你可以更加明确控制内存排布，更重要的是你更加能够预知程序的执行时间和行为。而失去了这种控制，也就意味着你的程序如何执行并不完全由你的代码如何编写决定。一个典型的例子是 stop-the-world 的全量垃圾回收，在这里回收的时间一般是由语言而不是程序决定的，这使得你并不能预知程序何时会出现中断或延迟（想象一下这在自动驾驶等应用中的影响）。</p>
-<p>读到这里，也许你想：“这些问题我都不是很在意，这本书我不必看了。”你也许对于很多语言提供的解决方案比较满意，也愿意为此付出一些代价。但这种解决方案还是存在一个问题：往往你要付出的代价是隐性的、强制的。这可以类比电信业务来看，你总会想知道你的套餐包含哪些服务、分别要多少费用，你还应当能够随时退订你不需要的服务、从而不再为它们付钱。但不同语言提供的“服务”更像是一种不能更改的套餐，你也不能明确知道你在为什么付出代价。一旦将来有一天你觉得当前的代价过高，你很难知道到底是什么服务导致的，很多时候你甚至根本无法退订这些服务。</p>
-<p>总结而言，当前的编程语言为了提供更简单的内存管理，削弱了程序的效率和控制力，也影响了你选择的权利，而这些都成为了 C / C++ 等底层系统语言仍然存在的关键理由。</p>
-<p>习惯了高级程序语言的程序员，可能会觉得 C 语言的内存管理充满了陷阱。其中的原因也很好理解：真实的机器其实并不如抽象模型中的那样简洁，而 C 语言作为更加接近机器的底层语言，既不会替你考虑、也不会为你掩盖这些细枝末节，它把处理细节的自由度完全交给了程序员。这自然给了你最优的性能、最高的控制权等等，但同时，这些琐碎的细节也会让你变得更加容易出错，C 的自由同时也意味着危险。</p>
-<p>C++ 通过为 C 语言增添不同的编程范式，似乎为这一问题提供了一个解决思路：提供给程序员更多的工具，程序员就可以通过很多手段从细枝末节中脱离出来。这里事实上蕴含了一个假定：程序越容易编写，就越不容易出错，然而这个假定本身中还有些疑点。首先，细节和复杂性是客观存在的，让编程更加“容易”，是意味着真正处理了复杂性还是只是在隐藏它们？其次，提供给程序员更多的工具似乎是能够让程序员拥有更强的能力，但使用这些工具的终究还是人，更多的工具会不会成为更多错误的源泉？我们能够观察到相当一部分 C++ 的程序员，的确不再关心底层细节，更多的工具也只让他们写出更加不可读也不可靠的代码，“精通 C++”也就成了一个程序员笑话。</p>
-<p>编程是人类的行为，中间发生的错误的来源也正是人的局限性。复杂性是客观存在的，同时人类对于复杂性的处理能力是有限的。比起将复杂性和危险隐藏在不加约束的自由之下，更明确地暴露问题似乎才更有利于问题的解决。而真正解决复杂性的手段，在计算机科学的历史中也无数次被证明，不是期待人去解决更复杂的问题，而是依靠抽象的手段、让人只需要解决更简单的问题。而这正是 Rust 选择的解决方案。</p>
-<p>下面我们将从 C 语言中隐藏的陷阱出发，看看 Rust 是如何通过明确问题和提供抽象，实现同样底层但更加安全内存管理。</p>
-<!-- 
-程序员常常会问自己这样一个问题，如何提高我的程序的性能？有个有点偷懒但很有效的答案，就是寻找程序当前的**性能瓶颈**并优化它。那么更具体一点说，性能瓶颈一般在哪呢？第一有可能的瓶颈自然是算法，但第二可能便是内存控制了。
-
-> 程序 = 算法 + 数据结构 （或者更简单的版本：**程序 = 过程 + 数据**）
-
-对于程序而言，内存是操作系统提供的一种即时的、高效的数据存储的抽象，然而这种高效不是完美的：内存的访问速度终究有限，内存本身也并非无穷大，内存的分配、释放、移动等都需要一定的管理成本。为了应对这些问题，硬件和操作系统实现了多级缓存等机制，能够在很多情况下直接带来隐式的效率提升，但这仍不意味着程序可以以任意的方式使用内存。对于程序而言，若能够了解和规避内存的局限性、充分运用缓存等底层机制，仔细地规划内存的使用，程序的性能常常能够得到更深度的优化。
-
-除了宽泛的性能问题之外，程序员希望对内存有更精细的控制的场合还有很多，比如对确定性或实时性有较高要求的场合，系统资源高度受限的场合，针对操作系统底层进行开发的场合等。但长久以来，系统程序员似乎面临着这样的困境：在现有的语言中，选择了更多更底层的控制，就意味着更容易出错；而选择了安全保障，则意味着更少控制。类似的抉择常常在是否要垃圾回收上体现：选择垃圾回收，你可以获得对内存访问的更多保障，如没有内存泄露问题，也没有悬垂指针、二次释放等广泛存在的内存安全问题，但你也因此无法直接触碰内存、控制内存的排布，无法决定（或者难以决定）何时回收垃圾，从而失去了一些优化的可能（编译器或虚拟机有时会帮你优化，你也可以通过编码技巧来促进这种优化，但终究比较间接和不可控）。
-
-那么，底层控制和安全性真的无法同时保障吗？需要首先明确的是，越接近底层控制，程序员越需要对底层机制有深入的了解，面对的状况也越复杂，这个复杂性是无法规避的。但复杂性并不直接意味着失去安全性，仅仅是提供安全保障也不意味着必须削弱控制。也就是说底层控制和安全保障并不是直接冲突的。我们真正需要解决的是复杂性的问题。
-
-泛泛而言，复杂性导致出错不外乎如下几个原因：
-
-* 对复杂性理解不足；
-* 繁琐的细节中出错；
-* 疲于应付繁琐细节、导致整体逻辑出错。
-
-解决问题也应该是对症下药，通过明确化来直面复杂性，和通过抽象来解决复杂性。
-
-**直面复杂性**：复杂性越直接暴露，也就越能促使程序员深入了解背后发生了什么。系统编程最为复杂的部分便是内存控制。因而，本章节将介绍内存机制如何在 rust 中显式呈现、不同的内存操作对操作对象有何要求、以及 rust 所提供的不同层次的安全保障和所要付出代价之间的显式权衡，最后以并发编程为例，展示这种明确化的潜在力量。
-
-**应对复杂性**：几乎每一本计算机科学的书都会谈到，应对复杂性最佳方式是抽象，而 rust 的抽象机制将在后续章节中介绍。 -->
-<!--
-参考：
-https://doc.rust-lang.org/nomicon/index.html
-https://docs.rust-embedded.org/book/static-guarantees/index.html
-https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
--->
-<div style="break-before: page; page-break-before: always;"></div><h2 id="数据的表示和操作"><a class="header" href="#数据的表示和操作">数据的表示和操作</a></h2>
-<h3 id="变量和类型"><a class="header" href="#变量和类型">变量和类型</a></h3>
-<p>所有的数据在计算机中，本质上都是以二进制的形式存在的。直接操作所有二进制数据是不现实的，程序需要一种方式来指定所需数据、并以正确的方式解读数据，而后才能对数据进行操作，从而完成程序逻辑。因此，我们一般将程序用到的数据理解为一个个<strong>数据对象</strong>，每个数据对象代表一块具有特定含义的数据。为了指定我们需要的数据对象，我们自然可以给每个数据对象编号，但是为其起一个具有实际含义的名字，往往更加有利于我们追踪和操作每个数据对象。我们也可以人为地记住每个名字对应的数据对象如何解读，但是为每个名字指定一个类型来表达其存取方式，会大幅减轻我们的记忆负担。</p>
-<p>于是，和大多数程序设计语言一样，Rust 通过变量来表示程序中所用到的数据对象，通过变量的类型来记录数据的存取方式。我们还可以使用 <code>let</code> 语句给变量起名字，随后即可以清晰地表达对数据操作：</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="程序的作用"><a class="header" href="#程序的作用">程序的作用</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="从数据开始思考"><a class="header" href="#从数据开始思考">从数据开始思考</a></h1>
+<p>好的程序员往往是从数据开始思考整个程序的。这很大程度上因为数据是连接真实世界和计算机世界的桥梁。真实世界中的不论是事物、还是概念，即便用再精确的语言描述，也不是计算机能够直接理解的。只有将它们表达为具体的数据，它们才真正在计算机世界中被赋予含义。这样一来，数据也同时成为程序的根基：程序所想要记录和传达的所有逻辑，都将被具体表达为对数据的一系列操作。</p>
+<p>所有的数据在计算机中，本质上都是以二进制的形式存在的。如何将事物或概念用二进制数据表达，是整个编程过程的万里长城第一步。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数据的表达"><a class="header" href="#数据的表达">数据的表达</a></h1>
+<p>为了能够表达一个确定的具体的事物，我们需要一段确定的、具有特定含义的二进制数据：需要一种方式明确指定这段数据，也需要在不同场合始终保持以相同的方式解读这段数据。我们一般将程序用到的具有特定含义的数据称为<strong>数据对象</strong>。为了指定我们需要的数据对象，我们可以为它起一个名字用来指代；而为了明确数据对象的解读方式，我们也应当为它指定一个类型。</p>
+<p>现实的概念表达为数据，最简单也是最直观的例子是数，但这个例子中也有足够多的精细考虑，从而能够作为用数据表达概念的良好示范。</p>
+<p>整数转换成二进制本身是容易的，你可以将转换的结果作为整数的计算机表示。在此基础上，小数也可以通过科学记数法来记录：用表示整数的方式分别记录有效数字和幂次。然而我们知道，一段数据的长度，在计算机中终究是有限的，能够表达的信息也是有限的，这意味着并不是所有的数都能在计算机中表达。于是，不管你设计怎样的数据表示方式，都是对真实概念的一种近似。数据表达概念的常见思考，就集中在考虑数据有何种需要、从而决定近似（或者说抽象）到何种程度。</p>
+<p>我们从整数的数据表示开始考虑：一个常见而有效的表示方法，就是设定几种固定的数据位数，以表示不同的范围的整数，让程序可以根据需要自行选择使用。设定的每种整数都规定了数据的存取方式（占用多少位？如何解读？），因此我们即是设定了几种不同范围的整数类型（对于负整数，计算机中往往采用补码表示，具体原因超过了本书的范围）。实数的表示也类似：我们规定几位用来表示有效数字、几位用来表示幂次，即是设定了不同范围和精度的实数类型（实际的实数表示更加复杂，需要考虑无限大、不存在等情况如何表达，参考 <a href="https://zh.wikipedia.org/wiki/IEEE_754">IEEE 754</a> 标准）。我们观察 Rust 中的几种数值类型，来理解每种类型是如何对应不同数据表示规则的：</p>
+<table><thead><tr><th align="center">类型名</th><th align="center">占用位数</th><th align="center">字节数</th><th align="center">数值范围</th></tr></thead><tbody>
+<tr><td align="center"><code>u8</code></td><td align="center">8</td><td align="center">1</td><td align="center">0-255</td></tr>
+<tr><td align="center"><code>u16</code></td><td align="center">16</td><td align="center">2</td><td align="center">0-65535</td></tr>
+</tbody></table>
+<p>我们需要记得，每种表示都是一种近似，对应真实概念的一种思维模型：在一定<strong>范围</strong>内，我们将一个概念如此表示和解读。很多时候，我们也会将类型视为所有它能表示的事物或概念的集合，来更加方便和直观地讨论它表示的范围。对数据的思考包含了对数据类型范围的思考。我们对于范围的边界应当更加谨慎，要确定类型能够表达的集合和所要解决问题的需要是匹配的。</p>
+<p>边界的存在促使我们有意识地思考：会不会超出这个边界？如果超出了该怎么办呢？对于数值类型而言，计算的结果超出类型能够表示的范围我们一般称为越界（或者叫溢出）。比如，如果两个 <code>u8</code> 类型的数相加，结果超过了 <code>u8</code> 能够表示的范围，就发生了越界。我们会看到，越界处理方式实际上不止一种，而且几种处理方式都很合情合理。</p>
+<p>最简单的处理方式可能是直接禁止超过范围的结果。如果超过类型能够表示的范围，程序直接报错。我们也可以把超过范围的部分忽略，这样也相当于实现了模为 256 的同余加法（比如128+128=0 (mod 256)，正好等于忽略高位的结果）。我们有时也可以认为范围内最大值表示了“最大”这个概念，这样我们可以把过大的结果用范围内能表示的最大值表示（这样 128+128 会得到 <code>u8</code> 类型所能表示的最大值 <code>u8::MAX</code>，即 255）。你可以通过如下方式在 Rust 中指定采用哪种方式：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let a: i32;       // 声明变量，直接标注变量类型
-    a = 3;            // 写入变量数据（赋初值）
-    let b = 5;        // 也可在声明时直接赋值，即定义变量
-    let c = a + b;    // 将两个i32类型相加的结果定义为新变量
-                      // 变量类型可以通过计算结果自动推断
+    // 128u8 means number 128 with type u8
+    // 128u8 + 128u8 would cause an error
+    assert!(128u8.wrapping_add(128u8) == 0);
+    assert!(128u8.saturating_add(128u8) == u8::MAX);
+}
+</code></pre></pre>
+<p>默认情况下不允许越界看似过于严格，然而，将最简单、最保守、最少假设的情况作为默认情况，能够促使我们对于自己的选择更加有意识（conscious）：每种不同的选择都会在程序中被明确表达，这些选择应当是我们知情的、有意的、主动的选择，如此我们就不会无意识间将两个正数相加得到一个更小的数甚至是负数；而如果这确实是我们的本意，程序会更加清晰地把这一意图表达出来。我们之后还会在 Rust 中看到很多类似的例子。</p>
+<p>我们可以支持更多的数据类型用来表达更复杂的数据，但让数据真正发挥价值的不是提供更多的预先定义的数据类型，而是提供由现有类型组合形成新数据类型的方式。如果我们将类型视为它所能表达的事物的集合，那么新类型的构造，正对应了现有类型对应集合之间的集合运算。这样理解有助于我们更加全面、更加抽象地理解数据类型的组合方式。</p>
+<p>最基本的组合产生新数据类型的方式是结构体（struct），它对应几种类型数据的所有可能组合。这类似集合之间的笛卡尔积：比如我们定义一个新数据类型 <code>Point</code> 如下：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Point(f64, f64);
+<span class="boring">}
+</span></code></pre></pre>
+<p>那么 <code>Point</code> 类型所能表达的集合是两个 <code>f64</code> 表达集合的笛卡尔积，我们即可用它来表示二维空间中的一个点。</p>
+<p>对于 struct 类型，Rust 中还提供了几种不同的形式供不同场合使用，但它们的本质是一致的，区别只在于是否为类型本身和类型中的元素命名：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// (f64, f64) is a anonymous tuple type
+let a: (f64, f64);
+// Point is a tuple struct
+struct Point(f64, f64);
+// NamedPoint is a struct with named fields
+struct NamedPoint {
+    x: f64,
+    y: f64,
+} 
+<span class="boring">}
+</span></code></pre></pre>
+<p>我们还可以组合多个相同类型，类似集合的幂。比如我们想表示一个 \(N\) 维向量（对应幂集 \(\mathbb{R}^N\)），在 Rust 中可以写 <code>[f64; N]</code>（N 是固定的）。</p>
+<p>这些产生新数据类型的方式，直觉上来看其实都对应着集合的乘积。也许因为这种方式更加直观、或更接近计算机的工作原理，这种方式在几乎所有语言中都有实现。然而我们将知道，这并不是唯一可行的组合方式，也不是我们唯一需要的组合方式。实际上，产生新数据类型的方法很大程度决定了一个语言<strong>类型系统</strong>的表达能力，我们将在第 4 章深入探讨为什么我们需要更强大的表达能力、以及我们能用一个强大的类型系统来干什么。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="操作数据"><a class="header" href="#操作数据">操作数据</a></h1>
+<p>和大多数编程语言一样，在 Rust 中，我们通过<strong>变量</strong>来指代程序中所用到的数据对象。每个变量都绑定着一个确定的<strong>类型</strong>，Rust 通过变量的类型来明确数据的存取方式。我们通过 <code>let</code> 语句创建一个变量：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // 定义新变量
+    let a = 3;
+    let b = 5;
+    // 将两个变量相加的结果定义为新变量
+    let c = a + b;
+    // 上面几个变量的类型都通过计算结果自动推断
     println!(&quot;a + b is: {}&quot;, c);  // -&gt; 8
 }
 </code></pre></pre>
-<p>在保证指代关系清晰、没有歧义的情况下，rust 中的变量名是可以重复使用的，你只需要重新定义一个同名变量，新变量的类型也可以和之前不同。</p>
-<p>在允许同名的情况下，规定每个名字的作用范围就变得很有意义，这样你不需要担心一个名字被意外覆盖掉，在你不知情的情况下具有了其他含义。Rust 中通过大括号明确变量的作用范围（即作用域），每个作用域内定义的变量名，不会对作用域之外的名字产生任何影响。</p>
+<p>由于名字是对于数据对象的一个指代，像代数中的字母、或者自然语言中的代词一样，名字是可以重复使用、用来指代不同的数据对象的。在允许名字重复使用的情况下，明确每个名字的所指、避免歧义，对程序而言就十分关键了。</p>
+<p>这样你不需要担心一个名字被意外覆盖掉，在你不知情的情况下具有了其他含义。Rust 中通过大括号明确变量的作用范围（即作用域），每个作用域内定义的变量名，不会对作用域之外的名字产生任何影响。</p>
 <p>我们可以简单地将 <code>let</code> 视为分配新名字的工具。在作用域结束或出现新的同名的 <code>let</code> 之前，分配的名字将始终指代一个具有特定类型的数据对象：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let a = 3;
@@ -230,7 +217,7 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 </code></pre></pre>
 <p>变量除了起到指代数据对象的作用之外，还通过类型明确了数据对象的存取方式。这是什么意思呢？我们以 <code>i32</code> 类型为例，这个类型事实上规定了程序通过 32 个二进制位存储该类型的数据对象，且这些二进制位将作为整数来读取（更具体而言是按照补码的方式）。</p>
 <p>Rust 中的基本类型都如 <code>i32</code> 这样<strong>明确</strong>规定了数据的存取格式和所占空间大小，如 <code>u8</code> 表示 8 位无符号整数（即一个字节），<code>f64</code> 表示 64 位浮点数（即 C 语言中的双精度浮点数 double）等等。</p>
-<h3 id="基本数学操作"><a class="header" href="#基本数学操作">基本数学操作</a></h3>
+<h2 id="基本数学操作"><a class="header" href="#基本数学操作">基本数学操作</a></h2>
 <p>Rust 中最基本的类型是各种数值类型，这些数值类型也是计算机表达所有运算逻辑的基础。我们在之前的例子中已经看到，两个整数类型变量能够和数学上的整数一样进行加法运算，然而计算机中的运算和数学运算并不是完全等价的。我们来看一个例子：</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let a = 64i8;  // 通过 i8 后缀指定该值为 i8 类型
@@ -248,7 +235,7 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 }
 </code></pre></pre>
 <p>在 Rust 中，类型支持的操作，往往都像这样通过在该类型对象上调用<strong>方法</strong>表示。任何类型都可以定义自己的方法，包括最基本的数值类型。比如，<code>i32</code> 类型支持的操作可以在 https://doc.rust-lang.org/std/primitive.i32.html 查到。</p>
-<h3 id="表达式和代码块"><a class="header" href="#表达式和代码块">表达式和代码块</a></h3>
+<h2 id="表达式和代码块"><a class="header" href="#表达式和代码块">表达式和代码块</a></h2>
 <p>目前我们接触的数据操作，都遵循类似的模式：首先计算结果，然后将计算出的值用变量记录、或直接输出。事实上，我们甚至可以更普适地认为，计算结果是实现数据操作的核心。我们将能够计算结果的一段语法结构称为表达式，我们所说的“计算结果”更确切来讲就是对表达式求值。</p>
 <p>我们已经见过几种比较基本的表达式形式：字面值表达式，算术表达式，以及方法调用。【解释字面值表达式】。算术表达式我们都比较熟悉，和数学上（或计算器上）的形式是一致的。方法调用（或函数调用）的形式也比较好理解，但其具体含义我们后面会深入探讨。【强调它们都可以求值】</p>
 <p>除这些显然可以求值的语法结构之外，将更多的语法结构视为表达式是很有好处的。首先，可以求值是一个附加的好处，你永远可以忽略这个值，让它成为一次单纯的操作，就像 C 语言中的各种语句一样。其次，将操作建立在“求值”这一基本概念上，提供了对编程思维的另一个层次的抽象。我们对比下面三个例子：</p>
@@ -295,7 +282,7 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 <p>【break和continue，代码块标记】</p>
 <p>【在没有返回值的表达式中做有意义的事：“状态”和状态的改变。】</p>
 <p>【在引入状态之前，考虑是否需要状态，是否可以用 map 解决。举基本例子。更多关于闭包和函数式编程后面再讲。】</p>
-<h3 id="赋值表达式和-mut-变量"><a class="header" href="#赋值表达式和-mut-变量">赋值表达式和 <code>mut</code> 变量</a></h3>
+<h2 id="赋值表达式和-mut-变量"><a class="header" href="#赋值表达式和-mut-变量">赋值表达式和 <code>mut</code> 变量</a></h2>
 <p>通过表达式来表达程序逻辑，很多时候你是在建立数据间的映射或转换关系。这更像一个数学上的计算：根据算式计算结果，算式本身是固定的，计算结果也是固定的、不可变的。这对应到内存中，则意味着每个数据对象都是只读的，我们不断将表达式求出的值放置在新的数据对象里、而不会修改原有的对象。由这种方式构建的数据操作，为程序提供了一个最基本的保障：每个数据对象在它的整个生命周期中，都将不会被修改，这让这些数据操作能够保证一个可控、可预测的结果。</p>
 <p>然而如前所述，我们需要在程序中引入“状态”的概念。相比前面的只读变量（虽然它们不可变，我们仍然沿用变量一词），状态额外增加了修改的需求。具体而言，作为状态的变量将不再是只读的、不可变的，你应当可以给变量写入新的值，直到下次写入前，变量将保持这一值不变。</p>
 <p>Rust 利用 <code>mut</code>变量表示可变的状态，用赋值表达式来表达对状态的写入或改变。这仍然基于明确性的需求：当你需要在程序中引入一个可变的状态时，你需要通过 <code>mut</code> <strong>明确</strong>提出要求，否则，变量默认都是只读的。</p>
@@ -308,72 +295,51 @@ https://doc.rust-lang.org/1.5.0/book/choosing-your-guarantees.html
 </code></pre></pre>
 <p>延续我们之前的讨论：将更多的语法结构视为表达式是没有坏处的。赋值操作也是一个表达式，它由左侧的赋值位置表达式、赋值操作符、和右侧的值表达式构成。与其他表达式不同的是，赋值表达式不再表达简单的数据映射，它有一个更为复杂的执行过程。</p>
 <p>【赋值表达式的核心作用是修改状态。以 <code>c = a + b</code> 为例具体过程分为几步实现：丢弃原有值，计算新值，将新值移动到变量中。注意和 <code>let c = a + b;</code> 的区别；讨论对于 <code>b = a</code>，<code>a</code> 去哪了？】</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="指针类型"><a class="header" href="#指针类型">指针类型</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="堆空间管理"><a class="header" href="#堆空间管理">堆空间管理</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="字符串和容器"><a class="header" href="#字符串和容器">字符串和容器</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="设计抽象"><a class="header" href="#设计抽象">设计抽象</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="数据抽象和操作抽象"><a class="header" href="#数据抽象和操作抽象">数据抽象和操作抽象</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="抽象数据类型"><a class="header" href="#抽象数据类型">抽象数据类型</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="操作抽象和实现"><a class="header" href="#操作抽象和实现">操作抽象和实现</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="参数类型和约束"><a class="header" href="#参数类型和约束">参数类型和约束</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="类型转换"><a class="header" href="#类型转换">类型转换</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="函数和闭包"><a class="header" href="#函数和闭包">函数和闭包</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="编码范式"><a class="header" href="#编码范式">编码范式</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="函数式编程"><a class="header" href="#函数式编程">函数式编程</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="类型驱动设计"><a class="header" href="#类型驱动设计">类型驱动设计</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="泛型编程"><a class="header" href="#泛型编程">泛型编程</a></h2>
-<p>http://www.cs.ox.ac.uk/jeremy.gibbons/publications/dgp.pdf</p>
-<p>https://thume.ca/2019/07/14/a-tour-of-metaprogramming-models-for-generics/</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="元编程"><a class="header" href="#元编程">元编程</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="面向对象编程"><a class="header" href="#面向对象编程">面向对象编程</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="并发编程"><a class="header" href="#并发编程">并发编程</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="工程开发"><a class="header" href="#工程开发">工程开发</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="名字管理"><a class="header" href="#名字管理">名字管理</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="模块组织"><a class="header" href="#模块组织">模块组织</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="包和包管理"><a class="header" href="#包和包管理">包和包管理</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="构建管理"><a class="header" href="#构建管理">构建管理</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="开发工具链"><a class="header" href="#开发工具链">开发工具链</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="理解程序的运行"><a class="header" href="#理解程序的运行">理解程序的运行</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数据的传递"><a class="header" href="#数据的传递">数据的传递</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数据管理"><a class="header" href="#数据管理">数据管理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="类型的抽象和设计"><a class="header" href="#类型的抽象和设计">类型的抽象和设计</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="用程序表达思想"><a class="header" href="#用程序表达思想">用程序表达思想</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="用程序编写程序"><a class="header" href="#用程序编写程序">用程序编写程序</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="错误的发现和处理"><a class="header" href="#错误的发现和处理">错误的发现和处理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="程序优化"><a class="header" href="#程序优化">程序优化</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="程序组织"><a class="header" href="#程序组织">程序组织</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="构建和产出"><a class="header" href="#构建和产出">构建和产出</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="程序的运行环境"><a class="header" href="#程序的运行环境">程序的运行环境</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="与其他语言共处"><a class="header" href="#与其他语言共处">与其他语言共处</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="重新思考编程"><a class="header" href="#重新思考编程">重新思考编程</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                        
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                            </nav>
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-                        <script type="text/javascript">
+        <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
-                
     </body>
 </html>
