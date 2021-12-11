@@ -196,7 +196,8 @@ struct NamedPoint {
 <p>这些产生新数据类型的方式，直觉上来看其实都对应着集合的乘积。也许因为这种方式更加直观、或实现上更加容易，这种方式在几乎所有语言中都有体现。然而我们将知道，这并不是唯一可行的组合方式，也不是我们唯一需要的组合方式。实际上，产生新数据类型的方法很大程度决定了一个语言<strong>类型系统</strong>的表达能力。我们将在第 4 章深入探讨类型系统的概念和意义，以及为什么我们需要更强大的表达能力、以及我们能用一个强大的类型系统来干什么。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="操作数据"><a class="header" href="#操作数据">操作数据</a></h1>
 <h2 id="变量和作用域"><a class="header" href="#变量和作用域">变量和作用域</a></h2>
-<p>在对数据对象做任何有意义的事情之前，首先都需要一种方式来指定它们。我们自然可以给每个数据对象顺序编号、用编号指定数据（这正是 CPU 所做的事），但是为其起一个具有实际含义的名字，往往更加有利于我们理解、追踪和操作每个数据对象。我们也会希望这个名字与数据对象的类型是绑定的，确保我们不会错误使用名字背后的数据。</p>
+<p>在对数据对象做任何有意义的事情之前，首先都需要一种方式来指定它们。【根据数据在内存中的位置指定。问题：不方便，对数据的操作很多时候不依赖其位置。通过名字指定：引入变量。】</p>
+<!-- 我们自然可以给每个数据对象顺序编号、用编号指定数据（这正是 CPU 所做的事），但是为其起一个具有实际含义的名字，往往更加有利于我们理解、追踪和操作每个数据对象。我们也会希望这个名字与数据对象的类型是绑定的，确保我们不会错误使用名字背后的数据。 -->
 <p>于是，和大多数编程语言一样，在 Rust 中，我们通过<strong>变量</strong>来指代程序中所用到的数据对象：我们可以通过变量名字指定操作对象，通过变量类型明确如何操作。</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     // define new variable with type
@@ -289,8 +290,10 @@ struct NamedPoint {
 }
 </code></pre></pre>
 <p>【写入操作的复杂性：赋值表达式为什么返回空值】</p>
-<p>【赋值表达式的核心作用是修改状态。以 <code>c = a + b</code> 为例具体过程分为几步实现：丢弃原有值，计算新值，将新值移动到变量中。注意和 <code>let c = a + b;</code> 的区别；讨论对于 <code>b = a</code>，<code>a</code> 去哪了？】</p>
+<p>【赋值表达式的核心作用是修改状态。以 <code>c = a + b</code> 为例具体过程分为几步实现：丢弃原有值，计算新值，将新值移动到变量中。注意和 <code>let c = a + b;</code> 的区别。】</p>
+<p>【实际上，数据的传递（不论是复制还是移动），在赋值表达式、函数调用等数据操作中十分重要。正确理解这些操作中发生的数据传递，需要我们明确数据所在的位置、以及程序如何在不同位置间传递数据。】</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="理解程序的运行"><a class="header" href="#理解程序的运行">理解程序的运行</a></h1>
+<p>在进一步讨论数据的位置和数据传递之前，我们需要更加深入地理解程序是如何运行的。我们将看到，程序运行的基本单元是<strong>函数</strong>，函数的数据在<strong>调用栈</strong>上进行存储和传递。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="数据的传递"><a class="header" href="#数据的传递">数据的传递</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="数据管理"><a class="header" href="#数据管理">数据管理</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="类型的抽象和设计"><a class="header" href="#类型的抽象和设计">类型的抽象和设计</a></h1>
