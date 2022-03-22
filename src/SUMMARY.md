@@ -5,12 +5,12 @@
 - [程序的作用](chap-01/00-index.md)
 
 - [从数据开始思考](chap-02/00-index.md)
-  - [数据的表达](chap-02/01-data-representation.md)
+  - [数据的表示](chap-02/01-data-representation.md)
   - [操作数据](chap-02/02-operation.md)
   - [理解程序的运行](chap-02/03-program-execution.md)
   - [数据的传递](chap-02/04-data-transfer.md)
 
-- [数据管理](chap-03/00-index.md)
+- [内存管理](chap-03/00-index.md)
   - [指针：作用和性质]()
   - [理解内存]()
   - [堆空间的利用和管理]()

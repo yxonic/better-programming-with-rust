@@ -7,3 +7,4 @@ title = "Better Programming with Rust"
 
 [output.html]
 mathjax-support = true
+additional-css = ["theme/custom.css"]
